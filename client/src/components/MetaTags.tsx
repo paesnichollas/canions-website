@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const MetaTags = () => {
   useEffect(() => {
     // Title
-    document.title = "Cânions Ultramarathon 106K — Piranhas/AL — 12 Set 2026";
+    document.title = "Cânions Ultramarathon Xtreme";
 
     // Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');
