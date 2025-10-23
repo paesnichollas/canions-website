@@ -46,25 +46,25 @@ export default function Countdown() {
         <div className="text-4xl md:text-5xl font-bold text-cta">
           {String(timeLeft.days).padStart(2, "0")}
         </div>
-        <div className="text-sm md:text-base text-gray-600 mt-2">Dias</div>
+        <div className="text-sm md:text-base text-white mt-2">Dias</div>
       </div>
       <div className="text-center">
         <div className="text-4xl md:text-5xl font-bold text-cta">
           {String(timeLeft.hours).padStart(2, "0")}
         </div>
-        <div className="text-sm md:text-base text-gray-600 mt-2">Horas</div>
+        <div className="text-sm md:text-base text-white mt-2">Horas</div>
       </div>
       <div className="text-center">
         <div className="text-4xl md:text-5xl font-bold text-cta">
           {String(timeLeft.minutes).padStart(2, "0")}
         </div>
-        <div className="text-sm md:text-base text-gray-600 mt-2">Minutos</div>
+        <div className="text-sm md:text-base text-white mt-2">Minutos</div>
       </div>
       <div className="text-center">
         <div className="text-4xl md:text-5xl font-bold text-cta">
           {String(timeLeft.seconds).padStart(2, "0")}
         </div>
-        <div className="text-sm md:text-base text-gray-600 mt-2">Segundos</div>
+        <div className="text-sm md:text-base text-white mt-2">Segundos</div>
       </div>
     </div>
   );

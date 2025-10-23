@@ -26,9 +26,9 @@ const documents = [
 
 export default function Documentation() {
   return (
-    <section id="documentacao" className="py-16 bg-gray-50">
+    <section id="documentacao" className="py-16 bg-[var(--bg-surface)]">
       <div className="container">
-        <h2 className="text-4xl font-bold text-ink mb-12 text-center">
+        <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
           Documentação
         </h2>
 
@@ -38,14 +38,14 @@ export default function Documentation() {
               key={doc.name}
               href={doc.link}
               download
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-[var(--border-subtle)]"
             >
               <div className="text-4xl mb-4">{doc.icon}</div>
-              <h3 className="text-lg font-bold text-ink mb-2">{doc.name}</h3>
-              <p className="text-sm text-gray-600 mb-4">{doc.description}</p>
+              <h3 className="text-lg font-bold text-[var(--text-prim)] mb-2">{doc.name}</h3>
+              <p className="text-sm text-[var(--text-sec)] mb-4">{doc.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-xs text-gray-500">{doc.size}</span>
-                <button className="text-cta font-bold hover:text-earth-900 transition-colors">
+                <span className="text-xs text-[var(--text-sec)]">{doc.size}</span>
+                <button className="text-cta font-bold hover:text-amber-600 transition-colors">
                   ↓ Download
                 </button>
               </div>

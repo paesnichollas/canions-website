@@ -22,7 +22,7 @@ const MetaTags = () => {
 
     // Open Graph Tags
     const ogTags = [
-      { property: "og:title", content: "Cânions Ultramarathon Xtreme 106K" },
+      { property: "og:title", content: "Cânions Ultramarathon Xtreme" },
       {
         property: "og:description",
         content:
@@ -46,7 +46,7 @@ const MetaTags = () => {
     // Twitter Card Tags
     const twitterTags = [
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Cânions Ultramarathon Xtreme 106K" },
+      { name: "twitter:title", content: "Cânions Ultramarathon Xtreme" },
       {
         name: "twitter:description",
         content: "Ultramaratona nos cânions do São Francisco",

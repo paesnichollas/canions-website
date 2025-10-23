@@ -54,7 +54,7 @@ export default function Classifications() {
     return (
       <section id="classificacoes" className="py-16">
         <div className="container text-center">
-          <p className="text-gray-600">Classificações em breve</p>
+          <p className="text-white">Classificações em breve</p>
         </div>
       </section>
     );

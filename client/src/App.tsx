@@ -28,7 +28,7 @@ function App() {
     <ErrorBoundary>
       <MetaTags />
       <ThemeProvider
-        defaultTheme="light"
+        defaultTheme="dark"
         // switchable
       >
         <TooltipProvider>

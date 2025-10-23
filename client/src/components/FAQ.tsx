@@ -60,17 +60,17 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-16">
       <div className="container max-w-2xl">
-        <h2 className="text-4xl font-bold text-ink mb-12 text-center">
+        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
           Perguntas Frequentes
         </h2>
 
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq) => (
             <AccordionItem key={faq.id} value={faq.id}>
-              <AccordionTrigger className="text-lg font-bold text-ink hover:text-blue-700">
+              <AccordionTrigger className="text-lg font-bold text-amber-600 hover:text-blue-700">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-700">
+              <AccordionContent className="text-white">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

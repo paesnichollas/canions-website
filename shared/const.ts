@@ -2,7 +2,7 @@ export const COOKIE_NAME = "app_session_id";
 export const ONE_YEAR_MS = 1000 * 60 * 60 * 24 * 365;
 
 // Event Information
-export const EVENT_TITLE = "Cânions Ultramarathon Xtreme 106K";
+export const EVENT_TITLE = "Cânions Ultramarathon Xtreme";
 export const EVENT_SUBTITLE = "Desafie seus limites nos cânions do São Francisco";
 export const EVENT_LOCATION = "Piranhas, Alagoas";
 export const EVENT_DATE = "2026-09-12T05:00:00-03:00"; // America/Maceio timezone
@@ -52,6 +52,46 @@ export const PHOTO_LOCATIONS = [
   "Piranhas Velha",
   "Ponte de Ferro",
   "Trilha da Ferrovia",
+];
+
+// Athlete Kits
+export const ATHLETE_KITS = [
+  {
+    id: "basico",
+    name: "Kit",
+    borderColor: "border-blue-700",
+    items: [
+      "Camiseta oficial",
+      "Número de peito",
+      "Chip eletrônico",
+      "Mochila"
+    ],
+    image: "/img/kits/kit-basico.jpg" // Opcional - pode ser undefined
+  },
+  // {
+  //   id: "premium",
+  //   name: "Kit Premium",
+  //   borderColor: "border-green-700",
+  //   items: [
+  //     "Tudo do Kit Básico",
+  //     "Jaqueta impermeável",
+  //     "Garrafa térmica",
+  //     "Toalha de microfibra"
+  //   ],
+  //   image: "/img/kits/kit-premium.jpg" // Opcional - pode ser undefined
+  // },
+  // {
+  //   id: "vip",
+  //   name: "Kit VIP",
+  //   borderColor: "border-yellow-500",
+  //   items: [
+  //     "Tudo do Kit Premium",
+  //     "Relógio esportivo",
+  //     "Pasta de hidratação",
+  //     "Acesso à cerimônia VIP"
+  //   ],
+  //   image: "/img/kits/kit-vip.jpg" // Opcional - pode ser undefined
+  // }
 ];
 
 // App Info

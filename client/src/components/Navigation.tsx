@@ -9,6 +9,7 @@ const navItems = [
   { label: "Cronograma", href: "#cronograma" },
   { label: "Documentação", href: "#documentacao" },
   { label: "Classificações", href: "#classificacoes" },
+  { label: "Resultados", href: "#resultados" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
@@ -16,6 +17,7 @@ const navItems = [
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,16 +44,26 @@ export default function Navigation() {
   const handleNavClick = (href: string) => {
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      // Scroll suave com offset para compensar o header fixo
+      const headerHeight = 80; // Altura aproximada do header
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
     }
+    
+    // Fechar menu mobile após clique
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white shadow-lg"
-          : "bg-white/95 backdrop-blur-sm shadow-sm"
+          ? "bg-[var(--bg-surface)] shadow-lg"
+          : "bg-[var(--bg-surface)] backdrop-blur-sm shadow-sm"
       }`}
     >
       <nav className="container py-4 flex items-center justify-between">
@@ -62,8 +74,8 @@ export default function Navigation() {
             alt={APP_TITLE}
             className="h-12 w-auto"
           />
-          <span className="font-bold text-lg text-ink hidden sm:inline">
-            Cânions 106K
+          <span className="font-bold text-lg text-white hidden sm:inline">
+            Cânions Ultramarathon Xtreme
           </span>
         </div>
 
@@ -76,7 +88,7 @@ export default function Navigation() {
                 className={`text-sm font-medium transition-colors pb-2 border-b-2 ${
                   activeSection === item.href.slice(1)
                     ? "text-cta border-cta"
-                    : "text-gray-700 border-transparent hover:text-ink"
+                    : "text-white border-transparent hover:text-cta"
                 }`}
               >
                 {item.label}
@@ -86,7 +98,11 @@ export default function Navigation() {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden p-2 hover:bg-gray-100 rounded-lg">
+        <button 
+          className="lg:hidden p-2 hover:bg-white/10 rounded-lg text-white transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Abrir menu de navegação"
+        >
           <svg
             className="w-6 h-6"
             fill="none"
@@ -102,6 +118,30 @@ export default function Navigation() {
           </svg>
         </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-[var(--bg-surface)] shadow-lg border-t border-[var(--border-subtle)]">
+          <nav className="container py-4">
+            <ul className="space-y-2">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <button
+                    onClick={() => handleNavClick(item.href)}
+                    className={`w-full text-left py-3 px-4 rounded-lg transition-colors ${
+                      activeSection === item.href.slice(1)
+                        ? "text-cta bg-[var(--bg-elev)]"
+                        : "text-white hover:text-cta hover:bg-[var(--bg-elev)]"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

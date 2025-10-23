@@ -54,6 +54,15 @@
 }
 
 :root {
+  /* Tema escuro customizado */
+  --bg-base: #2E2E2E;      /* body */
+  --bg-surface: #3A3A3A;   /* sections/cards */
+  --bg-elev: #444444;      /* hovers/menus */
+  --border-subtle: #505050;
+  --text-prim: #F3F4F6;
+  --text-sec: #D1D5DB;
+  --cta: #FFD166;          /* mantém CTA da marca */
+  
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-600);
@@ -64,69 +73,74 @@
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-blue-800);
   --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --background: var(--bg-base);
+  --foreground: var(--text-prim);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-prim);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-prim);
+  --secondary: var(--bg-elev);
+  --secondary-foreground: var(--text-sec);
+  --muted: var(--bg-elev);
+  --muted-foreground: var(--text-sec);
+  --accent: var(--bg-elev);
+  --accent-foreground: var(--text-prim);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
   --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar: var(--bg-surface);
+  --sidebar-foreground: var(--text-prim);
+  --sidebar-accent: var(--bg-elev);
+  --sidebar-accent-foreground: var(--text-prim);
+  --sidebar-border: var(--border-subtle);
   --sidebar-ring: oklch(0.623 0.214 259.815);
 }
 
 .dark {
+  /* Tema escuro mantém os mesmos tokens */
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-500);
   --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
+  --background: var(--bg-base);
+  --foreground: var(--text-prim);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-prim);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-prim);
+  --secondary: var(--bg-elev);
+  --secondary-foreground: var(--text-sec);
+  --muted: var(--bg-elev);
+  --muted-foreground: var(--text-sec);
+  --accent: var(--bg-elev);
+  --accent-foreground: var(--text-prim);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
   --ring: oklch(0.488 0.243 264.376);
   --chart-1: var(--color-blue-300);
   --chart-2: var(--color-blue-500);
   --chart-3: var(--color-blue-600);
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar: var(--bg-surface);
+  --sidebar-foreground: var(--text-prim);
+  --sidebar-accent: var(--bg-elev);
+  --sidebar-accent-foreground: var(--text-prim);
+  --sidebar-border: var(--border-subtle);
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html, body {
+    background: var(--bg-base);
+    color: var(--text-prim);
   }
   body {
     @apply bg-background text-foreground font-sans;
@@ -150,6 +164,102 @@
 }
 
 @layer components {
+  /* Hero com imagem e gradiente */
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(14,165,166,.35) 0%, rgba(46,125,50,.35) 40%, rgba(94,64,34,.65) 100%),
+      url('/img/hero-canyons.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @supports not (background: paint(worklet)) {
+    .hero {
+      background-image: linear-gradient(180deg, rgba(14,165,166,.35), rgba(46,125,50,.35) 40%, rgba(94,64,34,.65));
+    }
+  }
+  
+  /* Scrollbar personalizado para mobile */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Text shadow para contraste no hero */
+  .text-shadow-lg {
+    text-shadow: 0 2px 8px rgba(0,0,0,.4);
+  }
+  
+  /* Melhorias para scroll horizontal em mobile */
+  .scroll-smooth-tabs {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Indicador visual de scroll */
+  .scroll-indicator {
+    position: relative;
+  }
+  
+  .scroll-indicator::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to left, var(--bg-surface), transparent);
+    pointer-events: none;
+  }
+  
+  /* Scroll suave global */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Melhor scroll suave para navegação */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Botão voltar ao topo */
+  .back-to-top {
+    animation: fadeInUp 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Pulse effect para o botão */
+  .back-to-top-pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 209, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
+    }
+  }
   /**
    * Custom container utility that centers content and adds responsive padding.
    *
