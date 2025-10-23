@@ -124,7 +124,7 @@ export default function PhotoGallery() {
   return (
     <section id="fotos-percurso" className="py-16">
       <div className="container">
-        <h2 className="text-4xl font-bold text-white mb-12 text-center">
+        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
           Fotos do Percurso
         </h2>
 

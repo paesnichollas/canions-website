@@ -71,7 +71,7 @@ export default function Home() {
       {/* Sobre */}
       <section id="sobre" className="py-16">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Sobre a Prova
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -117,47 +117,47 @@ export default function Home() {
       {/* Percurso */}
       <section id="percurso" className="py-16 bg-[var(--bg-surface)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Percurso Detalhado
           </h2>
           <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-            <h3 className="text-2xl font-bold text-amber-600 mb-6">
+            <h3 className="text-2xl font-bold text-green-700 mb-6">
               Etapas do Percurso
             </h3>
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cta rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   1
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--text-prim)]">Etapa 1: Largada em Piranhas</h4>
+                  <h4 className="font-bold text-blue-700">Etapa 1: Largada em Piranhas</h4>
                   <p className="text-[var(--text-sec)]">Início da jornada no Porto de Piranhas (0-25km)</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cta rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   2
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--text-prim)]">Etapa 2: Cânions dos Gaviões</h4>
+                  <h4 className="font-bold text-blue-700">Etapa 2: Cânions dos Gaviões</h4>
                   <p className="text-[var(--text-sec)]">Travessia pelos espetaculares cânions (25-55km)</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cta rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   3
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--text-prim)]">Etapa 3: Rota Encantada</h4>
+                  <h4 className="font-bold text-blue-700">Etapa 3: Rota Encantada</h4>
                   <p className="text-[var(--text-sec)]">Trilhas desafiadoras pela Rota Encantada (55-80km)</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cta rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   4
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--text-prim)]">Etapa 4: Chegada</h4>
+                  <h4 className="font-bold text-blue-700">Etapa 4: Chegada</h4>
                   <p className="text-[var(--text-sec)]">Reta final até o Memorial Miguel Arcanjo (80-106km)</p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function Home() {
       {/* Kits */}
       <section id="kits" className="py-16">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Kit do Atleta
           </h2>
           <div className={`grid gap-6 ${
@@ -218,7 +218,7 @@ export default function Home() {
       {/* Cronograma */}
       <section id="cronograma" className="py-16 bg-[var(--bg-surface)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Cronograma
           </h2>
           <div className="space-y-4 max-w-2xl mx-auto">
@@ -241,7 +241,7 @@ export default function Home() {
       {/* Chipagem */}
       <section id="chipagem" className="py-16">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Chipagem Eletrônica
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -285,7 +285,7 @@ export default function Home() {
       {/* Regulamento */}
       <section id="regulamento" className="py-16">
         <div className="container max-w-2xl">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Regulamento
           </h2>
           <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg text-center border border-[var(--border-subtle)]">
@@ -317,7 +317,7 @@ export default function Home() {
       {/* Patrocínios */}
       <section id="patrocinio" className="py-16 bg-[var(--bg-surface)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Patrocinadores e Apoios
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">

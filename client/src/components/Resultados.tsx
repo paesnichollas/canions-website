@@ -66,7 +66,7 @@ export default function Resultados() {
   return (
     <section id="resultados" className="py-16 bg-[var(--bg-surface)]">
       <div className="container">
-        <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
+        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
           Resultados de Provas Anteriores
         </h2>
 
