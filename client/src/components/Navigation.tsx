@@ -10,6 +10,7 @@ const navItems = [
   { label: "Documentação", href: "#documentacao" },
   { label: "Classificações", href: "#classificacoes" },
   { label: "Resultados", href: "#resultados" },
+  { label: "Patrocínios", href: "#patrocinio" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];

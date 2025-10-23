@@ -320,8 +320,33 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-[var(--text-prim)] mb-12 text-center">
             Patrocinadores e Apoios
           </h2>
-          <div className="text-center text-[var(--text-sec)]">
-            <p>Apoio de empresas e instituições locais em breve.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
+            {/* Piranhas Mídia */}
+            <div className="flex flex-col items-center space-y-4 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <img 
+                src="/img/Piranhas-Logo-Horizontal-menor-1.png" 
+                alt="Piranhas Mídia" 
+                className="h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Prefeitura de Olho D'Água do Casado */}
+            <div className="flex flex-col items-center space-y-4 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <img 
+                src="/img/logo-2025-pm-odc.png" 
+                alt="Prefeitura de Olho D'Água do Casado" 
+                className="h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* MECE */}
+            <div className="flex flex-col items-center space-y-4 bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <img 
+                src="/img/logo mece.png" 
+                alt="Mecejana" 
+                className="h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
         </div>
       </section>
