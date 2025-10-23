@@ -65,7 +65,7 @@ export default function Classifications() {
   return (
     <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
       <div className="container">
-        <h2 className="text-4xl font-bold text-[#F3F4F6] mb-12 text-center">
+        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
           CLASSIFICAÇÕES
         </h2>
 
