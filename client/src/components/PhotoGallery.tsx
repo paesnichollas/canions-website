@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PHOTO_LOCATIONS } from "@shared/const";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const photos = [
   {
@@ -179,17 +179,23 @@ export default function PhotoGallery() {
         {selectedPhoto && (
           <Dialog open={!!selectedPhoto} onOpenChange={() => setSelectedPhoto(null)}>
             <DialogContent className="max-w-4xl">
+              <DialogTitle className="sr-only">
+                Visualização da foto: {selectedPhoto.alt}
+              </DialogTitle>
+              <DialogDescription className="sr-only">
+                Foto do percurso do evento Cânions Ultramarathon. {selectedPhoto.alt} - Local: {selectedPhoto.location} - Crédito: {selectedPhoto.credit}
+              </DialogDescription>
               <img
                 src={selectedPhoto.src}
                 alt={selectedPhoto.alt}
                 className="w-full h-auto rounded-lg"
               />
               <div className="mt-4 text-center">
-                <p className="text-lg font-bold text-ink">{selectedPhoto.alt}</p>
-                <p className="text-sm text-gray-600">
+                <p className="text-lg font-bold text-amber-600">{selectedPhoto.alt}</p>
+                <p className="text-sm text-white">
                   Local: {selectedPhoto.location}
                 </p>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-white mt-2">
                   Crédito: {selectedPhoto.credit}
                 </p>
               </div>
