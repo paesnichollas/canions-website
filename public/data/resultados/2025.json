@@ -1,0 +1,24 @@
+{
+  "ano": 2025,
+  "categorias": {
+    "Solo": [
+      {"pos":1,"nome":"Atleta A","tempo":"10:45:12"},
+      {"pos":2,"nome":"Atleta B","tempo":"11:01:45"},
+      {"pos":3,"nome":"Atleta C","tempo":"11:22:18"},
+      {"pos":4,"nome":"Atleta D","tempo":"11:40:05"},
+      {"pos":5,"nome":"Atleta E","tempo":"12:05:50"},
+      {"pos":6,"nome":"Atleta F","tempo":"12:15:30"}
+    ],
+    "Dupla": [
+      {"pos":1,"nome":"Equipe B","tempo":"08:12:33"},
+      {"pos":2,"nome":"Equipe C","tempo":"08:30:15"},
+      {"pos":3,"nome":"Equipe D","tempo":"09:00:00"}
+    ],
+    "Quarteto": [
+      {"pos":1,"nome":"Quarteto X","tempo":"07:05:00"},
+      {"pos":2,"nome":"Quarteto Y","tempo":"07:15:30"}
+    ],
+    "Sexteto": [],
+    "Decateto": []
+  }
+}

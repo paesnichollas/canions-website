@@ -42,9 +42,9 @@ export default function Classifications() {
 
   if (loading) {
     return (
-      <section id="classificacoes" className="py-16">
+      <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
         <div className="container text-center">
-          <p className="text-gray-600">Carregando classificações...</p>
+          <p className="text-[#D1D5DB]">Carregando classificações...</p>
         </div>
       </section>
     );
@@ -52,9 +52,9 @@ export default function Classifications() {
 
   if (years.length === 0) {
     return (
-      <section id="classificacoes" className="py-16">
+      <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
         <div className="container text-center">
-          <p className="text-white">Classificações em breve</p>
+          <p className="text-[#F3F4F6]">Classificações em breve</p>
         </div>
       </section>
     );
@@ -63,10 +63,10 @@ export default function Classifications() {
   const currentData = selectedYear ? data[selectedYear] : null;
 
   return (
-    <section id="classificacoes" className="py-16 bg-gray-50">
+    <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
       <div className="container">
-        <h2 className="text-4xl font-bold text-ink mb-12 text-center">
-          Classificações
+        <h2 className="text-4xl font-bold text-[#F3F4F6] mb-12 text-center">
+          CLASSIFICAÇÕES
         </h2>
 
         {/* Abas por Ano */}
@@ -75,9 +75,13 @@ export default function Classifications() {
           onValueChange={(val) => setSelectedYear(parseInt(val))}
           className="mb-8"
         >
-          <TabsList className="grid w-full gap-2">
+          <TabsList className="grid w-full gap-2 bg-[#3A3A3A]">
             {years.map((year) => (
-              <TabsTrigger key={year} value={year.toString()}>
+              <TabsTrigger 
+                key={year} 
+                value={year.toString()}
+                className="data-[state=active]:bg-[#5C4426] data-[state=active]:text-[#F3F4F6] text-[#D1D5DB] hover:bg-[#444444]"
+              >
                 {year}
               </TabsTrigger>
             ))}
@@ -87,9 +91,13 @@ export default function Classifications() {
             <TabsContent value={selectedYear?.toString() || ""} className="mt-8">
               {/* Abas por Categoria */}
               <Tabs defaultValue="Solo">
-                <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 mb-8">
+                <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 mb-8 bg-[#3A3A3A]">
                   {CATEGORIES.map((category) => (
-                    <TabsTrigger key={category} value={category}>
+                    <TabsTrigger 
+                      key={category} 
+                      value={category}
+                      className="data-[state=active]:bg-[#5C4426] data-[state=active]:text-[#F3F4F6] text-[#D1D5DB] hover:bg-[#444444]"
+                    >
                       {category}
                     </TabsTrigger>
                   ))}
@@ -97,14 +105,14 @@ export default function Classifications() {
 
                 {CATEGORIES.map((category) => (
                   <TabsContent key={category} value={category}>
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="bg-[#3A3A3A] rounded-lg shadow-lg overflow-hidden border border-[#505050]">
                       {currentData.categorias[category].length > 0 ? (
                         <table className="w-full">
-                          <thead className="bg-earth-700 text-white">
+                          <thead className="bg-[#5C4426] text-[#F3F4F6]">
                             <tr>
-                              <th className="px-6 py-3 text-left">Posição</th>
-                              <th className="px-6 py-3 text-left">Nome</th>
-                              <th className="px-6 py-3 text-right">Tempo</th>
+                              <th className="px-6 py-3 text-left font-semibold">Posição</th>
+                              <th className="px-6 py-3 text-left font-semibold">Nome</th>
+                              <th className="px-6 py-3 text-right font-semibold">Tempo</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -113,15 +121,15 @@ export default function Classifications() {
                               .map((athlete) => (
                                 <tr
                                   key={athlete.pos}
-                                  className="border-b hover:bg-gray-50"
+                                  className="border-b border-[#505050] hover:bg-[#444444] transition-colors"
                                 >
-                                  <td className="px-6 py-4 font-bold text-cta">
+                                  <td className="px-6 py-4 font-bold text-amber-600">
                                     {athlete.pos}º
                                   </td>
-                                  <td className="px-6 py-4 text-ink">
+                                  <td className="px-6 py-4 text-[#F3F4F6]">
                                     {athlete.nome}
                                   </td>
-                                  <td className="px-6 py-4 text-right text-gray-700">
+                                  <td className="px-6 py-4 text-right text-[#D1D5DB]">
                                     {athlete.tempo}
                                   </td>
                                 </tr>
@@ -129,7 +137,7 @@ export default function Classifications() {
                           </tbody>
                         </table>
                       ) : (
-                        <div className="p-8 text-center text-gray-600">
+                        <div className="p-8 text-center text-[#D1D5DB]">
                           Nenhum resultado disponível para esta categoria
                         </div>
                       )}

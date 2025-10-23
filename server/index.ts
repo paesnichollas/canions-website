@@ -16,7 +16,14 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
+  // Serve static files from the public directory
   app.use(express.static(staticPath));
+
+  // Serve data files from the data directory in development
+  if (process.env.NODE_ENV !== "production") {
+    const dataPath = path.resolve(__dirname, "..", "public");
+    app.use("/data", express.static(path.join(dataPath, "data")));
+  }
 
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
