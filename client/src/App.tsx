@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -24,6 +25,17 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // Garantir que a página sempre inicie no topo ao carregar
+  useEffect(() => {
+    // Scroll para o topo imediatamente ao carregar
+    window.scrollTo(0, 0);
+    
+    // Prevenir scroll restoration do navegador
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   return (
     <ErrorBoundary>
       <MetaTags />

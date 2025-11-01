@@ -297,8 +297,8 @@ export default function Home() {
               className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-8 py-6"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/docs/regulamento.pdf";
-                link.download = "regulamento.pdf";
+                link.href = "/docs/regulamento-canions-2026.pdf";
+                link.download = "regulamento-canions-2026.pdf";
                 link.click();
               }}
             >
