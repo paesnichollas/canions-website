@@ -7,7 +7,7 @@ export const EVENT_SUBTITLE = "Desafie seus limites nos cânions do São Francis
 export const EVENT_LOCATION = "Piranhas, Alagoas";
 export const EVENT_DATE = "2026-09-12T05:00:00-03:00"; // America/Maceio timezone
 export const START_LOCATION = "Porto de Piranhas";
-export const FINISH_LOCATION = "Memorial Miguel Arcanjo";
+export const FINISH_LOCATION = "Praça do Giradouro";
 
 // External Links (Parametrizáveis)
 export const LINK_INSCRICAO = "#"; // Em breve
@@ -16,11 +16,25 @@ export const LINK_RESULTADOS_EXTERNOS = "#"; // Em breve
 export const LINK_MANUAL = "/docs/manual-do-atleta.pdf";
 export const LINK_TERMO = "/docs/termo-de-responsabilidade.pdf";
 export const LINK_AUTORIZACAO = "/docs/autorizacao-uso-imagem.pdf";
+// Termos por categoria
+export const LINK_TERMO_SOLO = "/docs/termo-resp-solo.pdf";
+export const LINK_TERMO_DUPLA = "/docs/termo-resp-dupla.pdf";
+export const LINK_TERMO_QUARTETO = "/docs/termo-resp-quarteto.pdf";
+export const LINK_TERMO_SEXTETO = "/docs/termo-resp-sexteto.pdf";
+export const LINK_TERMO_DECATETO = "/docs/termo-resp-decateto.pdf";
+// Formulários
+export const LINK_FICHA_MEDICA = "/docs/ficha-medica.pdf";
 export const LINK_WHATSAPP = "#"; // Em breve
 export const LINK_EMAIL = "contato@canyonsultramarathon.com";
 export const LINK_INSTAGRAM = "https://instagram.com";
 export const LINK_GPX = "#"; // Em breve
 export const LINK_MAPS = "#"; // Em breve
+
+// Inscrições
+// Quando REGISTRATION_ENABLED = false, o botão ficará somente leitura (desabilitado)
+// e exibirá a data de abertura configurada em REGISTRATION_OPEN_DATE.
+export const REGISTRATION_ENABLED = false;
+export const REGISTRATION_OPEN_DATE = "02/01/2026";
 
 // Color Palette (Tailwind tokens)
 export const COLORS = {
@@ -64,9 +78,10 @@ export const ATHLETE_KITS = [
       "Camiseta oficial",
       "Número de peito",
       "Chip eletrônico",
-      "Mochila"
+      "Obs.: Haverá a possibilidade de inclusão de mais itens no kit."
+
     ],
-    image: "/img/kits/kit-basico.jpg" // Opcional - pode ser undefined
+    image: "/img/kits/camisaof.png" // Opcional - pode ser undefined
   },
   // {
   //   id: "premium",

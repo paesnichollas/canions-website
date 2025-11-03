@@ -4,16 +4,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const categoryDescriptions: Record<string, string> = {
   Solo: "Corrida individual - Desafio máximo para atletas experientes",
-  Dupla: "Equipe de 2 atletas - Compartilhe o esforço e a emoção",
-  Quarteto: "Equipe de 4 atletas - Força em números",
-  Sexteto: "Equipe de 6 atletas - Máxima colaboração",
-  Decateto: "Equipe de 10 atletas - Experiência em grupo",
+  Dupla: "",
+  Quarteto: "",
+  Sexteto: "",
+  Decateto: "",
 };
 
 const categoryRequirements: Record<string, string[]> = {
   Solo: [
     "Experiência em ultramaratonas",
-    "Preparação física intensa",
+    "Preparação física intensa em Endurance",
     "Autonomia e resistência mental",
   ],
   Dupla: [
@@ -151,19 +151,31 @@ export default function CategoriesTabs() {
                       <li className="flex items-start gap-3">
                         <span className="text-green-500 font-bold mt-1">★</span>
                         <span className="text-[var(--text-sec)]">
-                          Experiência única nos cânions
+                            Viva a imersão total nas trilhas mais desafiadoras do Cangaço.
                         </span>
                       </li>
-                      <li className="flex items-start gap-3">
+                      {/* <li className="flex items-start gap-3">
                         <span className="text-green-500 font-bold mt-1">★</span>
                         <span className="text-[var(--text-sec)]">
                           Certificado de participação
                         </span>
+                      </li> */}
+                      <li className="flex items-start gap-3">
+                        <span className="text-green-500 font-bold mt-1">★</span>
+                        <span className="text-[var(--text-sec)]">
+                          Descoberta da força que existe em você.
+                        </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-green-500 font-bold mt-1">★</span>
                         <span className="text-[var(--text-sec)]">
-                          Apoio técnico e segurança
+                            Participar da prova que redefine o conceito de limites.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-green-500 font-bold mt-1">★</span>
+                        <span className="text-[var(--text-sec)]">
+                            Correr onde a natureza encontra a resistência humana.
                         </span>
                       </li>
                     </ul>

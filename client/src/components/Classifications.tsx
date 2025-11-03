@@ -22,13 +22,13 @@ export default function Classifications() {
   useEffect(() => {
     const loadClassifications = async () => {
       try {
-        // Carregar dados de 2025
-        const response = await fetch("/data/resultados/2025.json");
+        // Carregar dados de 2026
+        const response = await fetch("/data/resultados/2026.json");
         if (response.ok) {
           const json = await response.json();
-          setData({ 2025: json });
-          setYears([2025]);
-          setSelectedYear(2025);
+          setData({ 2026: json });
+          setYears([2026]);
+          setSelectedYear(2026);
         }
       } catch (error) {
         console.error("Erro ao carregar classificações:", error);
@@ -54,7 +54,7 @@ export default function Classifications() {
     return (
       <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
         <div className="container text-center">
-          <p className="text-[#F3F4F6]">Classificações em breve</p>
+          <p className="text-amber-600">Classificações em breve</p>
         </div>
       </section>
     );
@@ -66,9 +66,8 @@ export default function Classifications() {
     <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
       <div className="container">
         <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          CLASSIFICAÇÕES
+          CLASSIFICAÇÃO CÂNIONS 2026
         </h2>
-
         {/* Abas por Ano */}
         <Tabs
           value={selectedYear?.toString() || ""}
@@ -90,7 +89,8 @@ export default function Classifications() {
           {currentData && (
             <TabsContent value={selectedYear?.toString() || ""} className="mt-8">
               {/* Abas por Categoria */}
-              <Tabs defaultValue="Solo">
+              Em breve
+              {/* <Tabs defaultValue="Solo">
                 <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 mb-8 bg-[#3A3A3A]">
                   {CATEGORIES.map((category) => (
                     <TabsTrigger 
@@ -144,7 +144,7 @@ export default function Classifications() {
                     </div>
                   </TabsContent>
                 ))}
-              </Tabs>
+              </Tabs> */}
             </TabsContent>
           )}
         </Tabs>

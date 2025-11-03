@@ -10,13 +10,13 @@ const faqs = [
     id: "1",
     question: "Qual é a distância total da prova?",
     answer:
-      "A Cânions Ultramarathon Xtreme 106K possui 106 quilômetros de percurso desafiador pelos cânions do São Francisco, em Piranhas, Alagoas.",
+      "A Cânions Ultramarathon Xtreme 106K possui 106 quilômetros de percurso desafiador pelos cânions do São Francisco, Piranhas, Entremontes e Olho d'água do Casado.",
   },
   {
     id: "2",
     question: "Qual é o tempo limite para completar a prova?",
     answer:
-      "O tempo limite é de 30 horas para a categoria Solo. Para equipes, o tempo limite varia conforme a categoria (Dupla, Quarteto, Sexteto e Decateto).",
+      "O tempo limite é de 18 horas para a todas as categorias.",
   },
   {
     id: "3",
@@ -28,13 +28,13 @@ const faqs = [
     id: "4",
     question: "Qual é o valor da inscrição?",
     answer:
-      "Os valores de inscrição variam conforme a categoria. Entre em contato conosco para obter informações atualizadas sobre os preços.",
+      "Consultar no regulamento.",
   },
   {
     id: "5",
     question: "Há apoio técnico durante a prova?",
     answer:
-      "Sim, há postos de apoio estrategicamente distribuídos ao longo do percurso com água, alimentos e suporte médico.",
+      "Sim, há 5 postos de apoio estrategicamente distribuídos ao longo do percurso com água, bombeiros e suporte médico.",
   },
   {
     id: "6",
@@ -52,7 +52,7 @@ const faqs = [
     id: "8",
     question: "Há limite de inscrições?",
     answer:
-      "Sim, as inscrições são limitadas para garantir a segurança e qualidade da experiência. Recomenda-se inscrever-se com antecedência.",
+      "Não há limite de inscrições.",
   },
 ];
 

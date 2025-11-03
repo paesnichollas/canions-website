@@ -3,45 +3,51 @@ import { Button } from "@/components/ui/button";
 
 // Dados de exemplo - em produção, estes viriam de uma API ou arquivos JSON
 const resultadosData = {
-  2025: {
-    ano: 2025,
+  2018: {
+    ano: 2018,
+    distancia: 82,
     links: [
-      { label: "Resultados completos (PDF)", href: "/docs/resultados-2025.pdf" },
-      { label: "Resultados no site oficial", href: "https://example.com/resultados-2025" }
+      { label: "Resultados completos (PDF)",href: "/docs/classificacao2018.pdf" },
+      // { label: "Resultados no site oficial", href: "https://example.com/resultados-2025" }
     ],
-    resumo: [
-      { pos: 1, nome: "Atleta A", tempo: "10:45:12", categoria: "Solo" },
-      { pos: 2, nome: "Atleta B", tempo: "10:52:20", categoria: "Solo" },
-      { pos: 3, nome: "Atleta C", tempo: "11:05:30", categoria: "Solo" },
-      { pos: 4, nome: "Equipe Alpha", tempo: "08:15:45", categoria: "Dupla" },
-      { pos: 5, nome: "Equipe Beta", tempo: "08:22:10", categoria: "Dupla" }
-    ]
+    // resumo: [
+    //   { pos: 1, nome: "Atleta A", tempo: "10:45:12", categoria: "Solo" },
+    //   { pos: 2, nome: "Atleta B", tempo: "10:52:20", categoria: "Solo" },
+    //   { pos: 3, nome: "Atleta C", tempo: "11:05:30", categoria: "Solo" },
+    //   { pos: 4, nome: "Equipe Alpha", tempo: "08:15:45", categoria: "Dupla" },
+    //   { pos: 5, nome: "Equipe Beta", tempo: "08:22:10", categoria: "Dupla" }
+    // ]
   },
-  2024: {
-    ano: 2024,
+  2019: {
+    ano: 2019,
+    distancia: 95,
     links: [
-      { label: "Resultados completos (PDF)", href: "/docs/resultados-2024.pdf" },
-      { label: "Resultados no site oficial", href: "https://example.com/resultados-2024" }
+      { label: "Resultados completos (PDF)", href: "/docs/classificacao2019.pdf" },
+      // { label: "Resultados no site oficial", href: "https://example.com/resultados-2024" }
     ],
-    resumo: [
-      { pos: 1, nome: "João Silva", tempo: "09:45:12", categoria: "Solo" },
-      { pos: 2, nome: "Maria Santos", tempo: "10:02:20", categoria: "Solo" },
-      { pos: 3, nome: "Equipe Thunder", tempo: "07:15:45", categoria: "Dupla" }
-    ]
+    // resumo: [
+    //   { pos: 1, nome: "João Silva", tempo: "09:45:12", categoria: "Solo" },
+    //   { pos: 2, nome: "Maria Santos", tempo: "10:02:20", categoria: "Solo" },
+    //   { pos: 3, nome: "Equipe Thunder", tempo: "07:15:45", categoria: "Dupla" }
+    // ]
   },
-  2023: {
-    ano: 2023,
+  2022: {
+    ano: 2022,
+    distancia: 100,
     links: [
-      { label: "Resultados completos (PDF)", href: "/docs/resultados-2023.pdf" }
+      // { label: "Resultados completos (PDF)", href: "/docs/resultados-2023.pdf" },
+      { label: "Resultados no site oficial", href: "https://helga-o.com/webres/index.php?lauf=3954&lang=&year=2022" }
     ],
     resumo: []
   }
 };
 
-const anos = Object.keys(resultadosData).sort((a, b) => parseInt(b) - parseInt(a));
+const anos = (Object.keys(resultadosData)
+  .map((k) => Number(k)) as Array<keyof typeof resultadosData>)
+  .sort((a, b) => (b as number) - (a as number));
 
 export default function Resultados() {
-  const [anoAtivo, setAnoAtivo] = useState(anos[0]);
+  const [anoAtivo, setAnoAtivo] = useState<keyof typeof resultadosData>(anos[0]);
   const tabsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -61,7 +67,13 @@ export default function Resultados() {
     return () => container.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const dadosAnoAtual = resultadosData[anoAtivo as keyof typeof resultadosData];
+  const dadosAnoAtual =
+    resultadosData[anoAtivo] ?? {
+      ano: Number(anoAtivo),
+      distancia: 0,
+      links: [],
+      resumo: [] as Array<{ pos: number; nome: string; tempo: string; categoria: string }>,
+    };
 
   return (
     <section id="resultados" className="py-16 bg-[var(--bg-surface)]">
@@ -105,7 +117,7 @@ export default function Resultados() {
         <div className="space-y-6">
           <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
             <h3 className="text-2xl font-bold text-[var(--text-prim)] mb-6">
-              Resultados {dadosAnoAtual.ano}
+              Resultados {dadosAnoAtual.ano} - {dadosAnoAtual.distancia} km
             </h3>
 
             {/* Links de resultados */}
@@ -136,7 +148,7 @@ export default function Resultados() {
               </div>
             </div>
 
-            {/* Resumo dos resultados */}
+            {/* Resumo dos resultados
             {dadosAnoAtual.resumo.length > 0 ? (
               <div>
                 <h4 className="text-lg font-bold text-green-700 mb-4">
@@ -187,7 +199,7 @@ export default function Resultados() {
                   Araquivos de resultados para {dadosAnoAtual.ano} em breve.
                 </p>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

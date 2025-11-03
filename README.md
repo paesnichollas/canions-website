@@ -130,7 +130,7 @@ Todos os links e informações do evento estão centralizados em `shared/const.t
 export const LINK_INSCRICAO = "#"; // Alterar para URL de inscrição
 export const EVENT_DATE = "2026-09-12T05:00:00-03:00"; // Data e hora da largada
 export const START_LOCATION = "Porto de Piranhas"; // Local de largada
-export const FINISH_LOCATION = "Memorial Miguel Arcanjo"; // Local de chegada
+export const FINISH_LOCATION = "Praça do Giradouro"; // Local de chegada
 ```
 
 ## Dados de Classificações
