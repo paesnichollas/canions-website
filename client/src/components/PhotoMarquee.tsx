@@ -7,9 +7,9 @@ const marqueePhotos = Array.from({ length: 21 }, (_, i) =>
 
 export default function PhotoMarquee() {
   return (
-    <div className="relative h-24 md:h-32 overflow-hidden">
+    <div className="relative h-24 md:h-32 overflow-hidden w-full max-w-full">
       <div
-        className="flex gap-4 h-full"
+        className="flex gap-4 h-full w-full"
         style={{ animation: "marquee 30s linear infinite" }}
       >
         {[...marqueePhotos, ...marqueePhotos].map((photo, idx) => (

@@ -61,13 +61,13 @@ export default function Navigation() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 w-full max-w-full ${
         isScrolled
           ? "bg-[var(--bg-surface)] shadow-lg"
           : "bg-[var(--bg-surface)] backdrop-blur-sm shadow-sm"
       }`}
     >
-      <nav className="container py-4 flex items-center justify-between">
+      <nav className="container py-4 flex items-center justify-between w-full max-w-full">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
@@ -122,8 +122,8 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[var(--bg-surface)] shadow-lg border-t border-[var(--border-subtle)]">
-          <nav className="container py-4">
+        <div className="lg:hidden bg-[var(--bg-surface)] shadow-lg border-t border-[var(--border-subtle)] w-full max-w-full">
+          <nav className="container py-4 w-full max-w-full">
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.href}>

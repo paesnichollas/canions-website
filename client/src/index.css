@@ -141,25 +141,44 @@
   html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background: var(--bg-base);
     color: var(--text-prim);
   }
   html {
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   #root {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bebas Neue', system-ui, -apple-system, sans-serif;
     letter-spacing: 0.05em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  h1 {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -238,6 +257,26 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Garantir que todos os elementos principais ocupem 100% da largura no mobile */
+  section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Garantir que imagens não ultrapassem a largura */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Garantir que elementos principais não ultrapassem a largura */
+  header, nav, main, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   
   /* Melhor scroll suave para navegação */
   .smooth-scroll {
@@ -292,10 +331,12 @@
    */
   .container {
     width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem; /* 16px - mobile padding */
     padding-right: 1rem;
+    box-sizing: border-box;
   }
 
   @media (min-width: 640px) {

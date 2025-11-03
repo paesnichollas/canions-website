@@ -15,15 +15,15 @@ import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-base)]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-base)] w-full max-w-full overflow-x-hidden">
       <Navigation />
 
       {/* Hero Section */}
-      <section id="inscricao" className="relative hero isolate text-center py-20 md:py-32">
+      <section id="inscricao" className="relative hero isolate text-center py-20 md:py-32 w-full max-w-full">
         <PhotoMarquee />
-        <div className="relative text-white mt-8 md:mt-12">
-          <div className="container text-center">
-            <h1 className="text-5xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-600">
+        <div className="relative text-white mt-8 md:mt-12 w-full max-w-full">
+          <div className="container text-center w-full max-w-full px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-600 break-words leading-tight">
               {EVENT_TITLE}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-sand-300">
@@ -327,18 +327,18 @@ export default function Home() {
       {/* Regulamento */}
       <section id="regulamento" className="py-16">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-12 text-center">
             Regulamento
           </h2>
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
             {/* Card Regulamento */}
-            <div className="bg-[var(--bg-surface)] p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)]">
-              <p className="text-[var(--text-sec)] mb-6">
+            <div className="bg-[var(--bg-surface)] p-4 sm:p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)] w-full max-w-full">
+              <p className="text-[var(--text-sec)] mb-6 text-sm sm:text-base break-words">
                 Leia o regulamento completo da prova para conhecer todas as regras
                 e procedimentos.
               </p>
               <Button
-                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-8 py-6"
+                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/docs/regulamento-canions-2026.pdf";
@@ -351,16 +351,16 @@ export default function Home() {
             </div>
 
             {/* Card Detalhamento do Percurso */}
-            <h2 className="text-4xl font-bold text-amber-600 mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-8 text-center">
              RaceBook
             </h2>
-            <div className="bg-[var(--bg-surface)] p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)]">
-              <p className="text-[var(--text-sec)] mb-6">
+            <div className="bg-[var(--bg-surface)] p-4 sm:p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)] w-full max-w-full">
+              <p className="text-[var(--text-sec)] mb-6 text-sm sm:text-base break-words">
                 Confira o detalhamento do percurso com trechos e orientações
                 específicas para os atletas <span className="text-amber-600">Extremamente recomendado a impressão desse documento</span>.
               </p>
               <Button
-                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-8 py-6"
+                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/docs/percuso-detalhamento.pdf";
