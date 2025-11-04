@@ -143,7 +143,7 @@ export default function Home() {
                   2
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Prainha de Entremontes até a a Fazenda Boa-Vista</h4>
+                  <h4 className="font-bold text-blue-700">Prainha de Entremontes até a Fazenda Boa-Vista</h4>
                   <p className="text-[var(--text-sec)]">Km 25 até km 42</p>
                 </div>
               </div>
