@@ -131,7 +131,7 @@ export default function CategoriesTabs() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-lg font-bold text-blue-700 mb-4">
-                      Requisitos
+                      Recomendações
                     </h4>
                     <ul className="space-y-2">
                       {categoryRequirements[category].map((req, idx) => (

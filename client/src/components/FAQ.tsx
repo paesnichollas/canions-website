@@ -28,7 +28,7 @@ const faqs = [
     id: "4",
     question: "Qual é o valor da inscrição?",
     answer:
-      "Consultar no regulamento.",
+      "Consultar no regulamento. (Valor por atleta!)",
   },
   {
     id: "5",
