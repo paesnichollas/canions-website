@@ -27,12 +27,19 @@ function Router() {
 function App() {
   // Garantir que a página sempre inicie no topo ao carregar
   useEffect(() => {
-    // Scroll para o topo imediatamente ao carregar
-    window.scrollTo(0, 0);
-    
     // Prevenir scroll restoration do navegador
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
+    }
+
+    // Se não houver hash na URL, força início no topo de forma robusta (iOS/Safari)
+    if (!window.location.hash) {
+      const scrollTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      // Tentativas em diferentes momentos do ciclo de render/carregamento
+      scrollTop();
+      requestAnimationFrame(scrollTop);
+      setTimeout(scrollTop, 0);
+      window.addEventListener('load', scrollTop, { once: true });
     }
   }, []);
 

@@ -23,7 +23,7 @@ export default function Home() {
         <PhotoMarquee />
         <div className="relative text-white mt-8 md:mt-12 w-full max-w-full">
           <div className="container text-center w-full max-w-full px-4">
-            <h1 className="text-3xl sm:text-4xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-600 break-words leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-600 break-normal leading-tight">
               {EVENT_TITLE}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-sand-300">
