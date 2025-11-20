@@ -6,7 +6,8 @@ import {
   LINK_TERMO_DUPLA,
   LINK_TERMO_QUARTETO,
   LINK_TERMO_SEXTETO,
-  LINK_TERMO_5KM10KM,
+  LINK_TERMO_5KM,
+  LINK_TERMO_10KM,
   LINK_FICHA_MEDICA,
 } from "@shared/const";
 
@@ -51,9 +52,17 @@ const documents = [
     titleClass: "text-amber-600",
   },
   {
-    name: "Termo de Responsabilidade (5km/10km)",
-    description: "Documento de responsabilidade para categoria Sexteto",
-    link: LINK_TERMO_5KM10KM,
+    name: "Termo de Responsabilidade (5km)",
+    description: "Documento de responsabilidade para categoria 5km solo",
+    link: LINK_TERMO_5KM,
+    icon: "📋",
+    size: "PDF",
+    titleClass: "text-amber-600",
+  },
+  {
+    name: "Termo de Responsabilidade (10km)",
+    description: "Documento de responsabilidade para categoria 10km solo",
+    link: LINK_TERMO_10KM,
     icon: "📋",
     size: "PDF",
     titleClass: "text-amber-600",

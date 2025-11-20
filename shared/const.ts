@@ -21,7 +21,8 @@ export const LINK_TERMO_SOLO = "/docs/termo-resp-solo.pdf";
 export const LINK_TERMO_DUPLA = "/docs/termo-resp-dupla.pdf";
 export const LINK_TERMO_QUARTETO = "/docs/termo-resp-quarteto.pdf";
 export const LINK_TERMO_SEXTETO = "/docs/termo-resp-sexteto.pdf";
-export const LINK_TERMO_5KM10KM = "/docs/termo-resp-5km10km.pdf";
+export const LINK_TERMO_5KM = "/docs/termo-resp-5km.pdf";
+export const LINK_TERMO_10KM = "/docs/termo-resp-10km.pdf";
 // Formulários
 export const LINK_FICHA_MEDICA = "/docs/ficha-medica.pdf";
 export const LINK_WHATSAPP = "#"; // Em breve
