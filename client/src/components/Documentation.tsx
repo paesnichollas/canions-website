@@ -6,6 +6,7 @@ import {
   LINK_TERMO_DUPLA,
   LINK_TERMO_QUARTETO,
   LINK_TERMO_SEXTETO,
+  LINK_TERMO_5KM10KM,
   LINK_FICHA_MEDICA,
 } from "@shared/const";
 
@@ -45,6 +46,14 @@ const documents = [
     name: "Termo de Responsabilidade (Sexteto)",
     description: "Documento de responsabilidade para categoria Sexteto",
     link: LINK_TERMO_SEXTETO,
+    icon: "📋",
+    size: "PDF",
+    titleClass: "text-amber-600",
+  },
+  {
+    name: "Termo de Responsabilidade (5km/10km)",
+    description: "Documento de responsabilidade para categoria Sexteto",
+    link: LINK_TERMO_5KM10KM,
     icon: "📋",
     size: "PDF",
     titleClass: "text-amber-600",

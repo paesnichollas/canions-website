@@ -70,14 +70,16 @@ const categoryBenefits: Record<string, string[]> = {
     "Correr onde a natureza encontra a resistência humana.",
   ],
   "5 km": [
-    "Troféus por 1º, 2º e 3º lugar masculino e feminino (local).",
-    "Troféus por 1º, 2º e 3º lugar masculino e feminino (geral).",
-    "Medalhas para todos os participantes.",
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
   ],
   "10 km": [
-    "Troféus por 1º, 2º e 3º lugar masculino e feminino (geral).",
-    "Troféus por faixa etária (solo masculino e feminino, 1º, 2º e 3º).",
-    "Medalhas para todos os participantes.",
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
   ],
 };
 
