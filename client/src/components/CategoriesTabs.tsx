@@ -7,7 +7,8 @@ const categoryDescriptions: Record<string, string> = {
   Dupla: "",
   Quarteto: "",
   Sexteto: "",
-  Decateto: "",
+  "5 km": "",
+  "10 km": "",
 };
 
 const categoryRequirements: Record<string, string[]> = {
@@ -31,10 +32,52 @@ const categoryRequirements: Record<string, string[]> = {
     "Estratégia coletiva",
     "Apoio constante",
   ],
-  Decateto: [
-    "Liderança clara",
-    "Comunicação eficiente",
-    "Motivação coletiva",
+  "5 km": [
+    "Prova ideal para iniciantes e quem busca uma primeira experiência na Cânions Ultramarathon Xtreme.",
+    "Mantenha um ritmo confortável e hidrate-se bem ao longo do percurso.",
+    "Aproveite o cenário dos cânions para curtir a prova do início ao fim.",
+  ],
+  "10 km": [
+    "Recomendado para corredores com experiência prévia em 5 km.",
+    "Trabalhe estratégia de ritmo e nutrição durante o percurso.",
+    "Prepare-se para um desafio maior nas trilhas do Cangaço.",
+  ],
+};
+
+const categoryBenefits: Record<string, string[]> = {
+  Solo: [
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
+  ],
+  Dupla: [
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
+  ],
+  Quarteto: [
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
+  ],
+  Sexteto: [
+    "Viva a imersão total nas trilhas mais desafiadoras do Cangaço.",
+    "Descoberta da força que existe em você.",
+    "Participar da prova que redefine o conceito de limites.",
+    "Correr onde a natureza encontra a resistência humana.",
+  ],
+  "5 km": [
+    "Troféus por 1º, 2º e 3º lugar masculino e feminino (local).",
+    "Troféus por 1º, 2º e 3º lugar masculino e feminino (geral).",
+    "Medalhas para todos os participantes.",
+  ],
+  "10 km": [
+    "Troféus por 1º, 2º e 3º lugar masculino e feminino (geral).",
+    "Troféus por faixa etária (solo masculino e feminino, 1º, 2º e 3º).",
+    "Medalhas para todos os participantes.",
   ],
 };
 
@@ -148,36 +191,12 @@ export default function CategoriesTabs() {
                       Benefícios
                     </h4>
                     <ul className="space-y-2">
-                      <li className="flex items-start gap-3">
-                        <span className="text-green-500 font-bold mt-1">★</span>
-                        <span className="text-[var(--text-sec)]">
-                            Viva a imersão total nas trilhas mais desafiadoras do Cangaço.
-                        </span>
-                      </li>
-                      {/* <li className="flex items-start gap-3">
-                        <span className="text-green-500 font-bold mt-1">★</span>
-                        <span className="text-[var(--text-sec)]">
-                          Certificado de participação
-                        </span>
-                      </li> */}
-                      <li className="flex items-start gap-3">
-                        <span className="text-green-500 font-bold mt-1">★</span>
-                        <span className="text-[var(--text-sec)]">
-                          Descoberta da força que existe em você.
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-green-500 font-bold mt-1">★</span>
-                        <span className="text-[var(--text-sec)]">
-                            Participar da prova que redefine o conceito de limites.
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-green-500 font-bold mt-1">★</span>
-                        <span className="text-[var(--text-sec)]">
-                            Correr onde a natureza encontra a resistência humana.
-                        </span>
-                      </li>
+                      {categoryBenefits[category]?.map((benefit, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-green-500 font-bold mt-1">★</span>
+                          <span className="text-[var(--text-sec)]">{benefit}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>

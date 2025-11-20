@@ -69,7 +69,7 @@ shared/
 - Contagem regressiva com fuso horário America/Maceio
 
 ### ✅ Conteúdo Dinâmico
-- **Categorias**: Abas interativas (Solo, Dupla, Quarteto, Sexteto, Decateto)
+- **Categorias**: Abas interativas (Solo, Dupla, Quarteto, Sexteto, 5 km, 10 km)
 - **Galeria de Fotos**: 15 imagens com filtros por localização e lightbox
 - **Classificações**: Abas por ano com dados em JSON
 - **FAQ**: Accordion com 8 perguntas frequentes

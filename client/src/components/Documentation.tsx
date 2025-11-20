@@ -6,7 +6,6 @@ import {
   LINK_TERMO_DUPLA,
   LINK_TERMO_QUARTETO,
   LINK_TERMO_SEXTETO,
-  LINK_TERMO_DECATETO,
   LINK_FICHA_MEDICA,
 } from "@shared/const";
 
@@ -46,14 +45,6 @@ const documents = [
     name: "Termo de Responsabilidade (Sexteto)",
     description: "Documento de responsabilidade para categoria Sexteto",
     link: LINK_TERMO_SEXTETO,
-    icon: "📋",
-    size: "PDF",
-    titleClass: "text-amber-600",
-  },
-  {
-    name: "Termo de Responsabilidade (Decateto)",
-    description: "Documento de responsabilidade para categoria Decateto",
-    link: LINK_TERMO_DECATETO,
     icon: "📋",
     size: "PDF",
     titleClass: "text-amber-600",

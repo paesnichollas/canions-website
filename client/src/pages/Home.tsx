@@ -212,6 +212,57 @@ export default function Home() {
       {/* Categorias */}
       <CategoriesTabs />
 
+      {/* Premiação por Faixa Etária
+      <section id="premiacao-faixa-etaria" className="py-16 bg-[var(--bg-surface)]">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
+            Premiação por Faixa Etária
+          </h2>
+          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-700 mb-4">
+                  Troféus por Faixa Etária
+                </h3>
+                <p className="text-[var(--text-sec)] mb-6">
+                  Troféus para as faixas etárias – provas Solo masc. e fem., 1º, 2º e 3º lugares.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-green-700 mb-4">
+                  Faixas Etárias
+                </h4>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-[var(--text-sec)]">19 a 29 anos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-[var(--text-sec)]">30 a 39 anos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-[var(--text-sec)]">40 a 49 anos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-[var(--text-sec)]">50 a 59 anos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-[var(--text-sec)]">60+ anos</span>
+                  </li>
+                </ul>
+                <p className="text-sm text-[var(--text-sec)] italic">
+                  Medalhas para todos os participantes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
       {/* Kits */}
       <section id="kits" className="py-16">
         <div className="container">
@@ -383,6 +434,36 @@ export default function Home() {
 
       {/* Hospedagem */}
       <Hospedagem />
+
+      {/* Gelo para Atletas */}
+      <section id="gelo-atletas" className="py-16">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
+            Gelo para Atletas
+          </h2>
+          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="flex justify-center">
+                {/* TODO: Substituir por logo da fábrica de gelo quando disponível */}
+                <img 
+                  src="/img/apoio/fabrica-de-gelo.png" 
+                  alt="Fábrica de Gelo" 
+                  className="max-h-32 w-auto object-contain"
+                  onError={(e) => {
+                    // Esconde a imagem se não existir
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <div>
+                <p className="text-[var(--text-sec)] text-lg">
+                  Adquira gelo em Piranhas com preço especial para atletas inscritos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Patrocínios */}
       <section id="patrocinio" className="py-16 bg-[var(--bg-surface)]">

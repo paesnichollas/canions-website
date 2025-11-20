@@ -21,7 +21,6 @@ export const LINK_TERMO_SOLO = "/docs/termo-resp-solo.pdf";
 export const LINK_TERMO_DUPLA = "/docs/termo-resp-dupla.pdf";
 export const LINK_TERMO_QUARTETO = "/docs/termo-resp-quarteto.pdf";
 export const LINK_TERMO_SEXTETO = "/docs/termo-resp-sexteto.pdf";
-export const LINK_TERMO_DECATETO = "/docs/termo-resp-decateto.pdf";
 // Formulários
 export const LINK_FICHA_MEDICA = "/docs/ficha-medica.pdf";
 export const LINK_WHATSAPP = "#"; // Em breve
@@ -54,7 +53,7 @@ export const COLORS = {
 };
 
 // Categories
-export const CATEGORIES = ["Solo", "Dupla", "Quarteto", "Sexteto", "Decateto"];
+export const CATEGORIES = ["Solo", "Dupla", "Quarteto", "Sexteto", "5 km", "10 km"];
 
 // Photo Locations
 export const PHOTO_LOCATIONS = [
