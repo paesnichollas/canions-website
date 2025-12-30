@@ -10,7 +10,7 @@ export const START_LOCATION = "Porto de Piranhas";
 export const FINISH_LOCATION = "Praça do Giradouro";
 
 // External Links (Parametrizáveis)
-export const LINK_INSCRICAO = "#"; // Em breve
+export const LINK_INSCRICAO = "https://www.realtiming.com.br/evento/canions2026";
 export const LINK_REGULAMENTO_PDF = "/docs/regulamento.pdf";
 export const LINK_RESULTADOS_EXTERNOS = "#"; // Em breve
 export const LINK_MANUAL = "/docs/manual-do-atleta.pdf";
