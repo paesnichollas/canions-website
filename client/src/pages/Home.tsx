@@ -31,7 +31,7 @@ export default function Home() {
             </p>
             <p className="text-lg mb-12 text-gray-300">{EVENT_LOCATION}</p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button
                 size="lg"
                 className={`bg-cta text-ink font-bold text-lg px-8 py-6 ${!REGISTRATION_ENABLED ? "opacity-60 cursor-not-allowed" : "hover:bg-yellow-400"}`}
@@ -57,6 +57,13 @@ export default function Home() {
               >
                 Ver Percurso
               </Button>
+            </div>
+
+            {/* Aviso sobre Motos de Apoio */}
+            <div className="bg-amber-600/20 border-2 border-amber-500 rounded-lg p-3 md:p-4 max-w-2xl mx-auto mb-12">
+              <p className="text-white text-center text-sm md:text-base">
+                <span className="text-amber-400 font-bold">MOTOS DE APOIO – ATENÇÃO:</span> Antes de se inscrever, é recomendada a leitura das orientações do <span className="text-amber-400 font-bold">Item 26 do Regulamento Oficial</span>
+              </p>
             </div>
           </div>
         </div>
