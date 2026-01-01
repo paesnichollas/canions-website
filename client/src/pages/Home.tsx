@@ -136,7 +136,7 @@ export default function Home() {
               Etapas do Percurso
             </h3>
             <div className="space-y-4">
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   1
                 </div>
@@ -145,7 +145,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">Largada até km 25</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   2
                 </div>
@@ -154,7 +154,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">Km 25 até km 42</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   3
                 </div>
@@ -163,7 +163,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">km 42 até km 58</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   4
                 </div>
@@ -172,7 +172,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">km 58 até km 66</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   5
                 </div>
@@ -181,7 +181,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">km 66 até km 71</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   6
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">km 71 até km 83</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   7
                 </div>
@@ -199,13 +199,119 @@ export default function Home() {
                   <p className="text-[var(--text-sec)]">km 83 até km 88</p>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
                   8
                 </div>
                 <div>
                   <h4 className="font-bold text-blue-700">AL-220 nas Castanhas até a Praça do Giradouro</h4>
                   <p className="text-[var(--text-sec)]">km 88 até km 106</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Percurso 5 km */}
+          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] mt-8">
+            <h3 className="text-2xl font-bold text-green-700 mb-6">
+              Percurso 5 km
+            </h3>
+            <div className="space-y-4">
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  1
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Largada no Cais de Piranhas</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  2
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Sobe a Rota Encantada</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  3
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Desce para Piranhas Velha</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  4
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Chegada na Praça do Giradouro</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Percurso 10 km */}
+          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] mt-8">
+            <h3 className="text-2xl font-bold text-green-700 mb-6">
+              Percurso 10 km
+            </h3>
+            <div className="space-y-4">
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  1
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Largada no Cais de Piranhas</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  2
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Sobe a Rota Encantada</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  3
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Vai até o MIX</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  4
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Dobra à esquerda até a última rua da vila</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  5
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Entra na Leste-Oeste</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  6
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Segue pela trilha do trem</h4>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                  7
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-700">Chegada na Praça do Giradouro</h4>
                 </div>
               </div>
             </div>
