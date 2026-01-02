@@ -44,7 +44,7 @@ export default function Home() {
                 aria-disabled={!REGISTRATION_ENABLED}
                 title={REGISTRATION_ENABLED ? "Inscreva-se" : `Inscrições em ${REGISTRATION_OPEN_DATE}`}
               >
-                {REGISTRATION_ENABLED ? "Inscreva-se Agora" : `Inscrições em ${REGISTRATION_OPEN_DATE}`}
+                {REGISTRATION_ENABLED ? "Inscrições Abertas!" : `Inscrições em ${REGISTRATION_OPEN_DATE}`}
               </Button>
               <Button
                 size="lg"

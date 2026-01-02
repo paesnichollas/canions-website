@@ -34,7 +34,7 @@ export const LINK_MAPS = "#"; // Em breve
 // Inscrições
 // Quando REGISTRATION_ENABLED = false, o botão ficará somente leitura (desabilitado)
 // e exibirá a data de abertura configurada em REGISTRATION_OPEN_DATE.
-export const REGISTRATION_ENABLED = false;
+export const REGISTRATION_ENABLED = true;
 export const REGISTRATION_OPEN_DATE = "02/01/2026";
 
 // Color Palette (Tailwind tokens)
