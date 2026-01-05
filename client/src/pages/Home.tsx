@@ -60,9 +60,16 @@ export default function Home() {
             </div>
 
             {/* Aviso sobre Motos de Apoio */}
-            <div className="bg-amber-600/20 border-2 border-amber-500 rounded-lg p-3 md:p-4 max-w-2xl mx-auto mb-12">
+            <div className="bg-amber-600/20 border-2 border-amber-500 rounded-lg p-3 md:p-4 max-w-2xl mx-auto mb-4">
               <p className="text-white text-center text-sm md:text-base">
                 <span className="text-amber-400 font-bold">MOTOS DE APOIO – ATENÇÃO:</span> Antes de se inscrever, é recomendada a leitura das orientações do <span className="text-amber-400 font-bold">Item 26 do Regulamento Oficial</span>
+              </p>
+            </div>
+
+            {/* Informação sobre Card Maker Real Timing */}
+            <div className="bg-amber-600/20 border-2 border-amber-500 rounded-lg p-3 md:p-4 max-w-2xl mx-auto mb-12">
+              <p className="text-white text-center text-sm md:text-base">
+                Durante a inscrição, o atleta poderá gerar um card personalizado para publicação no Instagram (feed ou stories), acessando a aba <span className="text-amber-400 font-bold">"Card Maker Real Timing"</span> no site de inscrições.
               </p>
             </div>
           </div>
