@@ -556,16 +556,16 @@ export default function Home() {
       <Hospedagem />
 
       {/* Gelo para Atletas */}
-      <section id="gelo-atletas" className="py-16">
+      {/* <section id="gelo-atletas" className="py-16">
         <div className="container">
           <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Gelo para Atletas
           </h2>
           <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="flex justify-center">
+              <div className="flex justify-center"> */}
                 {/* TODO: Substituir por logo da fábrica de gelo quando disponível */}
-                <img 
+                {/* <img 
                   src="/img/apoio/fabrica-de-gelo.png" 
                   alt="Fábrica de Gelo" 
                   className="max-h-32 w-auto object-contain"
@@ -583,7 +583,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Patrocínios */}
       <section id="patrocinio" className="py-16 bg-[var(--bg-surface)]">
