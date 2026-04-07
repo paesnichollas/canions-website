@@ -591,7 +591,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Patrocinadores e Apoios
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch justify-items-stretch">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 items-stretch justify-items-stretch">
             {/* Piranhas Mídia */}
             <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
               <img 
@@ -633,6 +633,24 @@ export default function Home() {
               <img 
                 src="/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png" 
                 alt="Real Timing" 
+                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* João Paulo */}
+            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <img 
+                src="/img/apoio/logo-joao-paulo.png" 
+                alt="João Paulo" 
+                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Prefeito Tiago Freitas */}
+            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <img 
+                src="/img/apoio/logo-tiago-freitas.png" 
+                alt="Prefeito Tiago Freitas" 
                 className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
