@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_OPEN_DATE } from "@shared/const";
 import Navigation from "@/components/Navigation";
 import PhotoMarquee from "@/components/PhotoMarquee";
@@ -13,7 +15,21 @@ import Footer from "@/components/Footer";
 import Hospedagem from "@/components/Hospedagem";
 import BackToTop from "@/components/BackToTop";
 
+const SPONSOR_LOGOS: { src: string; alt: string }[] = [
+  { src: "/img/apoio/logo-pref-piranhas.png", alt: "Piranhas Mídia" },
+  { src: "/img/apoio/SECULT STICKER (3) (1)-1.png", alt: "SECULT - Secretaria Municipal de Cultura e Turismo" },
+  { src: "/img/apoio/logo-2025-pm-odc.png", alt: "Prefeitura de Olho D'Água do Casado" },
+  { src: "/img/apoio/logo mece.png", alt: "Mecejana" },
+  { src: "/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png", alt: "Real Timing" },
+  { src: "/img/apoio/logo-joao-paulo.png", alt: "João Paulo" },
+  { src: "/img/apoio/logo-tiago-freitas.png", alt: "Prefeito Tiago Freitas" },
+  { src: "/img/apoio/supermax.png", alt: "Suppermax" },
+  { src: "/img/apoio/ascop.png", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
+];
+
 export default function Home() {
+  const [selectedLogo, setSelectedLogo] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] w-full max-w-full overflow-x-hidden">
       <Navigation />
@@ -591,81 +607,47 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
             Patrocinadores e Apoios
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-8 items-stretch justify-items-stretch">
-            {/* Piranhas Mídia */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/logo-pref-piranhas.png" 
-                alt="Piranhas Mídia" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* SECULT - Secretaria Municipal de Cultura e Turismo */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/SECULT STICKER (3) (1)-1.png" 
-                alt="SECULT - Secretaria Municipal de Cultura e Turismo" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* Prefeitura de Olho D'Água do Casado */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/logo-2025-pm-odc.png" 
-                alt="Prefeitura de Olho D'Água do Casado" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* MECE */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/logo mece.png" 
-                alt="Mecejana" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* Real Timing */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png" 
-                alt="Real Timing" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* João Paulo */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/logo-joao-paulo.png" 
-                alt="João Paulo" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* Prefeito Tiago Freitas */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/logo-tiago-freitas.png" 
-                alt="Prefeito Tiago Freitas" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* Suppermax */}
-            <div className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <img 
-                src="/img/apoio/supermax.png" 
-                alt="Suppermax" 
-                className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-8 items-stretch justify-items-stretch">
+            {SPONSOR_LOGOS.map((s) => (
+              <button
+                key={s.src}
+                type="button"
+                onClick={() => setSelectedLogo(s)}
+                className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 hover:ring-2 hover:ring-amber-500/50 transition-all duration-300 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label={`Ver logo maior: ${s.alt}`}
+              >
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity pointer-events-none"
+                />
+              </button>
+            ))}
           </div>
         </div>
       </section>
+
+      <Dialog
+        open={selectedLogo !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedLogo(null);
+        }}
+      >
+        <DialogContent className="max-w-[min(960px,calc(100vw-2rem))] gap-6 bg-[var(--bg-surface)] border-[var(--border-subtle)] p-6">
+          <DialogHeader className="text-left">
+            <DialogTitle>{selectedLogo?.alt}</DialogTitle>
+          </DialogHeader>
+          {selectedLogo && (
+            <div className="flex justify-center pb-4">
+              <img
+                src={selectedLogo.src}
+                alt={selectedLogo.alt}
+                className="max-h-[min(70vh,640px)] w-auto max-w-full object-contain rounded-md"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* FAQ */}
       <FAQ />
