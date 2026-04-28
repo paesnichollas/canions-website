@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_OPEN_DATE } from "@shared/const";
 import Navigation from "@/components/Navigation";
 import PhotoMarquee from "@/components/PhotoMarquee";
@@ -634,9 +634,7 @@ export default function Home() {
         }}
       >
         <DialogContent className="max-w-[min(960px,calc(100vw-2rem))] gap-6 bg-[var(--bg-surface)] border-[var(--border-subtle)] p-6">
-          <DialogHeader className="text-left">
-            <DialogTitle>{selectedLogo?.alt}</DialogTitle>
-          </DialogHeader>
+          <DialogTitle className="sr-only">{selectedLogo?.alt ?? "Logo do patrocinador"}</DialogTitle>
           {selectedLogo && (
             <div className="flex justify-center pb-4">
               <img
