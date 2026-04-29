@@ -79,6 +79,7 @@ export const ATHLETE_KITS = [
       "Camiseta oficial",
       "Número de peito",
       "Chip eletrônico",
+      "Bandana de rosto",
       "Obs.: Haverá a possibilidade de inclusão de mais itens no kit."
 
     ],
