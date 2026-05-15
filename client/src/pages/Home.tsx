@@ -23,6 +23,7 @@ const SPONSOR_LOGOS: { src: string; alt: string }[] = [
   { src: "/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png", alt: "Real Timing" },
   { src: "/img/apoio/logo-joao-paulo.png", alt: "João Paulo" },
   { src: "/img/apoio/logo-tiago-freitas.png", alt: "Prefeito Tiago Freitas" },
+  { src: "/img/apoio/margarida.png", alt: "Vereadora Margarida de Renato" },
   { src: "/img/apoio/supermax.png", alt: "Suppermax" },
   { src: "/img/apoio/ascop.png", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
 ];
