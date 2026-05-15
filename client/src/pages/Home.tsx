@@ -14,12 +14,20 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Hospedagem from "@/components/Hospedagem";
 import BackToTop from "@/components/BackToTop";
+import { cn } from "@/lib/utils";
 
-const SPONSOR_LOGOS: { src: string; alt: string }[] = [
+type SponsorLogo = { src: string; alt: string; imgClassName?: string };
+
+const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/logo-pref-piranhas.png", alt: "Piranhas Mídia" },
   { src: "/img/apoio/SECULT STICKER (3) (1)-1.png", alt: "SECULT - Secretaria Municipal de Cultura e Turismo" },
   { src: "/img/apoio/logo-2025-pm-odc.png", alt: "Prefeitura de Olho D'Água do Casado" },
   { src: "/img/apoio/logo mece.png", alt: "Mecejana" },
+  {
+    src: "/img/apoio/pedra do sino.png",
+    alt: "Pedra do Sino Hotel",
+    imgClassName: "max-h-45 sm:max-h-50 md:max-h-55",
+  },
   { src: "/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png", alt: "Real Timing" },
   { src: "/img/apoio/logo-joao-paulo.png", alt: "João Paulo" },
   { src: "/img/apoio/logo-tiago-freitas.png", alt: "Prefeito Tiago Freitas" },
@@ -29,7 +37,7 @@ const SPONSOR_LOGOS: { src: string; alt: string }[] = [
 ];
 
 export default function Home() {
-  const [selectedLogo, setSelectedLogo] = useState<{ src: string; alt: string } | null>(null);
+  const [selectedLogo, setSelectedLogo] = useState<SponsorLogo | null>(null);
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] w-full max-w-full overflow-x-hidden">
@@ -620,7 +628,10 @@ export default function Home() {
                 <img
                   src={s.src}
                   alt={s.alt}
-                  className="max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity pointer-events-none"
+                  className={cn(
+                    "max-h-20 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity pointer-events-none",
+                    s.imgClassName,
+                  )}
                 />
               </button>
             ))}
