@@ -34,6 +34,8 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/margarida.png", alt: "Vereadora Margarida de Renato" },
   { src: "/img/apoio/supermax.png", alt: "Suppermax" },
   { src: "/img/apoio/ascop.png", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
+  { src: "/img/apoio/LOGO CALCONT 5.png", alt: "Calcont Assessoria e Contabilidade" },
+  { src: "/img/apoio/LOGO PRECINHO 2.png", alt: "Mercadinho O Precinho" },
 ];
 
 export default function Home() {
