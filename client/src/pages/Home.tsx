@@ -36,6 +36,7 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/ascop.png", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
   { src: "/img/apoio/LOGO CALCONT 5.png", alt: "Calcont Assessoria e Contabilidade" },
   { src: "/img/apoio/LOGO PRECINHO 2.png", alt: "Mercadinho O Precinho" },
+  { src: "/img/apoio/copra.png", alt: "COPRA" },
 ];
 
 export default function Home() {
