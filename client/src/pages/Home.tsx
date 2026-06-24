@@ -27,32 +27,32 @@ import { cn } from "@/lib/utils";
 type SponsorLogo = { src: string; alt: string; imgClassName?: string };
 
 const SPONSOR_LOGOS: SponsorLogo[] = [
-  { src: "/img/apoio/logo-pref-piranhas.png", alt: "Piranhas Mídia" },
-  { src: "/img/apoio/SECULT STICKER (3) (1)-1.png", alt: "SECULT - Secretaria Municipal de Cultura e Turismo" },
-  { src: "/img/apoio/logo-2025-pm-odc.png", alt: "Prefeitura de Olho D'Água do Casado" },
-  { src: "/img/apoio/logo mece.png", alt: "Mecejana" },
+  { src: "/img/apoio/logo-pref-piranhas.webp", alt: "Piranhas Mídia" },
+  { src: "/img/apoio/SECULT STICKER (3) (1)-1.webp", alt: "SECULT - Secretaria Municipal de Cultura e Turismo" },
+  { src: "/img/apoio/logo-2025-pm-odc.webp", alt: "Prefeitura de Olho D'Água do Casado" },
+  { src: "/img/apoio/logo mece.webp", alt: "Mecejana" },
   {
-    src: "/img/apoio/pedra do sino.png",
+    src: "/img/apoio/pedra do sino.webp",
     alt: "Pedra do Sino Hotel",
     imgClassName: "max-h-45 sm:max-h-50 md:max-h-55",
   },
-  { src: "/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.png", alt: "Real Timing" },
-  { src: "/img/apoio/logo-joao-paulo.png", alt: "João Paulo" },
-  { src: "/img/apoio/logo-tiago-freitas.png", alt: "Prefeito Tiago Freitas" },
-  { src: "/img/apoio/margarida.png", alt: "Vereadora Margarida de Renato" },
-  { src: "/img/apoio/supermax.png", alt: "Suppermax" },
-  { src: "/img/apoio/ascop.png", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
-  { src: "/img/apoio/LOGO CALCONT 5.png", alt: "Calcont Assessoria e Contabilidade" },
-  { src: "/img/apoio/LOGO PRECINHO 2.png", alt: "Mercadinho O Precinho" },
-  { src: "/img/apoio/copra.png", alt: "COPRA" },
+  { src: "/img/apoio/LOGO REAL TIMING VERTICAL PNG BRANCA.webp", alt: "Real Timing" },
+  { src: "/img/apoio/logo-joao-paulo.webp", alt: "João Paulo" },
+  { src: "/img/apoio/logo-tiago-freitas.webp", alt: "Prefeito Tiago Freitas" },
+  { src: "/img/apoio/margarida.webp", alt: "Vereadora Margarida de Renato" },
+  { src: "/img/apoio/supermax.webp", alt: "Suppermax" },
+  { src: "/img/apoio/ascop.webp", alt: "ASCOP – Associação Comercial de Piranhas/AL" },
+  { src: "/img/apoio/LOGO CALCONT 5.webp", alt: "Calcont Assessoria e Contabilidade" },
+  { src: "/img/apoio/LOGO PRECINHO 2.webp", alt: "Mercadinho O Precinho" },
+  { src: "/img/apoio/copra.webp", alt: "COPRA" },
 ];
 
 // Imagens de produtos NewLife para o carrossel (produtos2 é duplicata de produtos)
 const NEWLIFE_PRODUCTS = [
-  "/img/newlife/produtos.jpeg",
-  "/img/newlife/produtos4.jpeg",
-  "/img/newlife/produtos5.jpeg",
-  "/img/newlife/produtos6.jpeg",
+  "/img/newlife/produtos.webp",
+  "/img/newlife/produtos4.webp",
+  "/img/newlife/produtos5.webp",
+  "/img/newlife/produtos6.webp",
 ];
 
 export default function Home() {
@@ -220,7 +220,7 @@ export default function Home() {
                       />
                       <div className="relative flex w-full max-w-xs items-center justify-center rounded-2xl bg-white p-8 shadow-xl animate-float">
                         <img
-                          src="/img/newlife/Fundo de logo new life Removido.png"
+                          src="/img/newlife/Fundo de logo new life Removido.webp"
                           alt="NewLife"
                           className="max-h-44 w-auto object-contain"
                         />
@@ -871,7 +871,7 @@ export default function Home() {
               <div className="flex justify-center"> */}
                 {/* TODO: Substituir por logo da fábrica de gelo quando disponível */}
                 {/* <img 
-                  src="/img/apoio/fabrica-de-gelo.png" 
+                  src="/img/apoio/fabrica-de-gelo.webp" 
                   alt="Fábrica de Gelo" 
                   className="max-h-32 w-auto object-contain"
                   onError={(e) => {

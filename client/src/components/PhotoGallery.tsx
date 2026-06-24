@@ -3,7 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const photos = Array.from({ length: 21 }, (_, i) => ({
   id: i + 1,
-  src: `/img/percurso/foto-percurso%20(${i + 1}).jpg`,
+  src: `/img/percurso/foto-percurso%20(${i + 1}).webp`,
   alt: `Foto do percurso ${i + 1}`,
 }));
 

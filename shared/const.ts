@@ -83,7 +83,7 @@ export const ATHLETE_KITS = [
       "Obs.: Haverá a possibilidade de inclusão de mais itens no kit."
 
     ],
-    image: "/img/kits/camisaof.png" // Opcional - pode ser undefined
+    image: "/img/kits/camisaof.webp" // Opcional - pode ser undefined
   },
   // {
   //   id: "premium",

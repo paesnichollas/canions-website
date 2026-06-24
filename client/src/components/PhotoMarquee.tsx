@@ -2,7 +2,7 @@ import React from "react";
 
 // Usa todas as imagens da pasta public/img/topo no formato "foto-topo (N).jpg"
 const marqueePhotos = Array.from({ length: 21 }, (_, i) =>
-  `/img/topo/foto-topo%20(${i + 1}).jpg`
+  `/img/topo/foto-topo%20(${i + 1}).webp`
 );
 
 export default function PhotoMarquee() {

@@ -4,27 +4,27 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 type Photo = { id: number; src: string; alt: string };
 
 const mecejanaPhotos: Photo[] = [
-  { id: 1, src: "/img/hospedagem/mecejana/foto.jpg", alt: "Pousada Mecejana - fachada" },
-  { id: 2, src: "/img/hospedagem/mecejana/2022/recepção.JPG", alt: "Mecejana - recepção" },
-  { id: 3, src: "/img/hospedagem/mecejana/2022/recepção%20(2).JPG", alt: "Mecejana - recepção 2" },
-  { id: 4, src: "/img/hospedagem/mecejana/2022/duplo/casal-1.JPG", alt: "Mecejana - quarto casal" },
-  { id: 5, src: "/img/hospedagem/mecejana/2022/triplo/triplo1.JPG", alt: "Mecejana - quarto triplo" }
+  { id: 1, src: "/img/hospedagem/mecejana/foto.webp", alt: "Pousada Mecejana - fachada" },
+  { id: 2, src: "/img/hospedagem/mecejana/2022/recepção.webp", alt: "Mecejana - recepção" },
+  { id: 3, src: "/img/hospedagem/mecejana/2022/recepção%20(2).webp", alt: "Mecejana - recepção 2" },
+  { id: 4, src: "/img/hospedagem/mecejana/2022/duplo/casal-1.webp", alt: "Mecejana - quarto casal" },
+  { id: 5, src: "/img/hospedagem/mecejana/2022/triplo/triplo1.webp", alt: "Mecejana - quarto triplo" }
 ];
 
 const dliaPhotos: Photo[] = [
-  { id: 1, src: "/img/hospedagem/d'lia/recepção-1.JPG", alt: "Pousada D'lia - recepção" },
-  { id: 2, src: "/img/hospedagem/d'lia/recepção-2.JPG", alt: "Pousada D'lia - recepção 2" },
-  { id: 3, src: "/img/hospedagem/d'lia/recepção-3.JPG", alt: "Pousada D'lia - recepção 3" },
-  { id: 4, src: "/img/hospedagem/d'lia/duplo/casal-1.JPG", alt: "Pousada D'lia - quarto casal" },
-  { id: 5, src: "/img/hospedagem/d'lia/triplo/3%20solteiro-1.JPG", alt: "Pousada D'lia - quarto triplo" }
+  { id: 1, src: "/img/hospedagem/d'lia/recepção-1.webp", alt: "Pousada D'lia - recepção" },
+  { id: 2, src: "/img/hospedagem/d'lia/recepção-2.webp", alt: "Pousada D'lia - recepção 2" },
+  { id: 3, src: "/img/hospedagem/d'lia/recepção-3.webp", alt: "Pousada D'lia - recepção 3" },
+  { id: 4, src: "/img/hospedagem/d'lia/duplo/casal-1.webp", alt: "Pousada D'lia - quarto casal" },
+  { id: 5, src: "/img/hospedagem/d'lia/triplo/3%20solteiro-1.webp", alt: "Pousada D'lia - quarto triplo" }
 ];
 
 const umbuzeiroPhotos: Photo[] = [
-  { id: 1, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(1).jpg", alt: "Pousada Umbuzeiro - foto 1" },
-  { id: 2, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(2).jpg", alt: "Pousada Umbuzeiro - foto 2" },
-  { id: 3, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(3).jpg", alt: "Pousada Umbuzeiro - foto 3" },
-  { id: 4, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(4).jpg", alt: "Pousada Umbuzeiro - foto 4" },
-  { id: 5, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(5).jpg", alt: "Pousada Umbuzeiro - foto 5" }
+  { id: 1, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(1).webp", alt: "Pousada Umbuzeiro - foto 1" },
+  { id: 2, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(2).webp", alt: "Pousada Umbuzeiro - foto 2" },
+  { id: 3, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(3).webp", alt: "Pousada Umbuzeiro - foto 3" },
+  { id: 4, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(4).webp", alt: "Pousada Umbuzeiro - foto 4" },
+  { id: 5, src: "/img/hospedagem/umbuzeiro/umbuzeiro%20(5).webp", alt: "Pousada Umbuzeiro - foto 5" }
 ];
 
 function Gallery({ title, photos }: { title: string; photos: Photo[] }) {
