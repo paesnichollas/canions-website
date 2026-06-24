@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_OPEN_DATE } from "@shared/const";
@@ -14,6 +14,14 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Hospedagem from "@/components/Hospedagem";
 import BackToTop from "@/components/BackToTop";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
 type SponsorLogo = { src: string; alt: string; imgClassName?: string };
@@ -39,8 +47,56 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/copra.png", alt: "COPRA" },
 ];
 
+// Imagens de produtos NewLife para o carrossel (produtos2 é duplicata de produtos)
+const NEWLIFE_PRODUCTS = [
+  "/img/newlife/produtos.jpeg",
+  "/img/newlife/produtos4.jpeg",
+  "/img/newlife/produtos5.jpeg",
+  "/img/newlife/produtos6.jpeg",
+];
+
 export default function Home() {
   const [selectedLogo, setSelectedLogo] = useState<SponsorLogo | null>(null);
+
+  // Reveal animado da seção de parceria ao entrar na viewport
+  const parceriaRef = useRef<HTMLElement>(null);
+  const [parceriaRevealed, setParceriaRevealed] = useState(false);
+  useEffect(() => {
+    const el = parceriaRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setParceriaRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  const reveal = (delay = "") =>
+    cn(
+      "transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0",
+      parceriaRevealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+      delay,
+    );
+
+  // Carrossel de produtos NewLife
+  const [productApi, setProductApi] = useState<CarouselApi>();
+  const [productIndex, setProductIndex] = useState(0);
+  useEffect(() => {
+    if (!productApi) return;
+    const update = () => setProductIndex(productApi.selectedScrollSnap());
+    update();
+    productApi.on("select", update);
+    productApi.on("reInit", update);
+    return () => {
+      productApi.off("select", update);
+      productApi.off("reInit", update);
+    };
+  }, [productApi]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] w-full max-w-full overflow-x-hidden">
@@ -111,6 +167,227 @@ export default function Home() {
             Falta pouco para o grande dia!
           </h2>
           <Countdown />
+        </div>
+      </section>
+
+      {/* Parceria NewLife */}
+      <section
+        id="parceria"
+        ref={parceriaRef}
+        className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-b from-[var(--bg-base)] via-[#202329] to-[var(--bg-base)]"
+      >
+        {/* Glows decorativos */}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-24 -left-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl animate-glow" />
+          <div
+            className="absolute -bottom-28 -right-16 h-80 w-80 rounded-full bg-amber-500/10 blur-3xl animate-glow"
+            style={{ animationDelay: "2.5s" }}
+          />
+          <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-700/10 blur-3xl" />
+        </div>
+
+        <div className="container relative">
+          {/* Cabeçalho */}
+          <div className={cn("text-center", reveal())}>
+            <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-sm font-semibold tracking-widest text-amber-300 backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-amber-400 motion-safe:animate-pulse" />
+              NOVA PARCERIA
+            </span>
+            <h2 className="mt-5 text-5xl md:text-6xl font-bold tracking-wide">
+              <span className="text-[var(--text-prim)]">Parceria </span>
+              <span className="bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 bg-clip-text text-transparent">
+                NewLife
+              </span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-[var(--text-sec)]">
+              A Cânions Ultramarathon Xtreme tem o prazer de anunciar uma nova
+              parceria com a NewLife — saúde e performance para quem desafia os
+              próprios limites.
+            </p>
+          </div>
+
+          {/* Card principal: logo + texto */}
+          <div className={cn("mt-14", reveal("delay-150"))}>
+            <div className="relative rounded-3xl bg-gradient-to-br from-blue-500/50 via-blue-300/10 to-amber-500/40 p-[1.5px] shadow-2xl">
+              <div className="rounded-[calc(1.5rem-1.5px)] bg-[#23262d]/90 p-6 backdrop-blur-xl md:p-10">
+                <div className="grid items-center gap-10 md:grid-cols-2">
+                  {/* Logo */}
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 -m-3 rounded-3xl bg-blue-500/30 blur-2xl animate-glow"
+                      />
+                      <div className="relative flex w-full max-w-xs items-center justify-center rounded-2xl bg-white p-8 shadow-xl animate-float">
+                        <img
+                          src="/img/newlife/Fundo de logo new life Removido.png"
+                          alt="NewLife"
+                          className="max-h-44 w-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Texto */}
+                  <div>
+                    <h3 className="mb-4 bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-3xl font-bold text-transparent">
+                      Sobre a NewLife
+                    </h3>
+                    {/* TODO: texto provisório — revisar com a NewLife */}
+                    <p className="mb-4 text-[var(--text-sec)]">
+                      A NewLife chega como mais uma parceira da Cânions
+                      Ultramarathon Xtreme, reforçando nosso compromisso com a
+                      saúde, o bem-estar e a superação dos atletas que desafiam os
+                      cânions do Rio São Francisco.
+                    </p>
+                    <p className="mb-6 text-[var(--text-sec)]">
+                      Juntos, levamos mais qualidade, cuidado e suporte para quem
+                      está sempre buscando ultrapassar os próprios limites.
+                    </p>
+                    <ul className="space-y-3">
+                      {[
+                        "Condições especiais para atletas inscritos",
+                        "Apoio e suporte durante o evento",
+                        "Novidades e conteúdos exclusivos",
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-ink shadow-md">
+                            <svg
+                              className="h-4 w-4"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              aria-hidden
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                          <span className="text-[var(--text-prim)]">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Produtos NewLife */}
+          <div className={cn("mt-16 md:mt-20", reveal("delay-300"))}>
+            <div className="text-center">
+              <h3 className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-3xl md:text-4xl font-bold text-transparent">
+                Conheça os produtos NewLife
+              </h3>
+              <p className="mx-auto mt-3 max-w-xl text-[var(--text-sec)]">
+                Linha de suplementos para fortalecer a sua imunidade, energia e
+                bem-estar.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-4xl items-center gap-10 md:grid-cols-2">
+              {/* Carrossel de produtos */}
+              <div className="flex flex-col items-center">
+                <Carousel
+                  opts={{ loop: true }}
+                  setApi={setProductApi}
+                  className="w-full max-w-[300px]"
+                >
+                  <CarouselContent>
+                    {NEWLIFE_PRODUCTS.map((src, i) => (
+                      <CarouselItem key={src}>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setSelectedLogo({
+                              src,
+                              alt: `Produtos NewLife — imagem ${i + 1} de ${NEWLIFE_PRODUCTS.length}`,
+                            })
+                          }
+                          className="group relative block w-full cursor-zoom-in rounded-3xl bg-gradient-to-br from-blue-500/50 to-amber-500/40 p-[1.5px] shadow-2xl transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                          aria-label={`Ampliar imagem ${i + 1} dos produtos NewLife`}
+                        >
+                          <div className="overflow-hidden rounded-[calc(1.5rem-1.5px)]">
+                            <img
+                              src={src}
+                              alt={`Linha de suplementos NewLife — imagem ${i + 1}`}
+                              className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                            Clique para ampliar
+                          </span>
+                        </button>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 border-white/30 bg-black/50 text-white hover:bg-black/70 hover:text-white" />
+                  <CarouselNext className="right-2 border-white/30 bg-black/50 text-white hover:bg-black/70 hover:text-white" />
+                </Carousel>
+
+                {/* Indicadores */}
+                <div className="mt-5 flex justify-center gap-2">
+                  {NEWLIFE_PRODUCTS.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => productApi?.scrollTo(i)}
+                      aria-label={`Ir para a imagem ${i + 1}`}
+                      aria-current={productIndex === i}
+                      className={cn(
+                        "h-2 rounded-full transition-all duration-300",
+                        productIndex === i
+                          ? "w-6 bg-amber-400"
+                          : "w-2 bg-white/30 hover:bg-white/60",
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Benefícios */}
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-1">
+                {[
+                  {
+                    label: "Fortalece a imunidade",
+                    d: "M10 1.5 3 4.5v5c0 4 3 7 7 9 4-2 7-5 7-9v-5L10 1.5Zm-1 11L6 9.5 7.4 8 9 9.6 12.6 6 14 7.4 9 12.5Z",
+                  },
+                  {
+                    label: "Mais energia e disposição",
+                    d: "M11 1 3 11h5l-1 8 8-10H10l1-8Z",
+                  },
+                  {
+                    label: "Ação anti-inflamatória",
+                    d: "M10 1.5c1.5 3-1 4.5-1 7a3 3 0 0 0 6 0c0-1-.3-1.8-.7-2.5C16 8 17 10 17 12a7 7 0 1 1-14 0c0-4 4-6 5-10.5Z",
+                  },
+                  {
+                    label: "Auxilia na saúde do coração",
+                    d: "M10 17S2.5 12.3 2.5 7.3A4 4 0 0 1 10 5.3a4 4 0 0 1 7.5 2c0 5-7.5 9.7-7.5 9.7Z",
+                  },
+                ].map((b) => (
+                  <li
+                    key={b.label}
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-white/10"
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-md">
+                      <svg
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden
+                      >
+                        <path d={b.d} />
+                      </svg>
+                    </span>
+                    <span className="font-medium text-[var(--text-prim)]">
+                      {b.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

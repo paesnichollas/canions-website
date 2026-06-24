@@ -316,6 +316,30 @@
       box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
     }
   }
+
+  /* Animações da seção de parceria NewLife */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .animate-float {
+    animation: floatY 6s ease-in-out infinite;
+  }
+
+  @keyframes softGlow {
+    0%, 100% { opacity: .4; transform: scale(1); }
+    50% { opacity: .85; transform: scale(1.1); }
+  }
+  .animate-glow {
+    animation: softGlow 5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-glow {
+      animation: none !important;
+    }
+  }
   /**
    * Custom container utility that centers content and adds responsive padding.
    *
