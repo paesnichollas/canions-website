@@ -68,7 +68,7 @@ export default function FAQ() {
             <AccordionItem
               key={faq.id}
               value={faq.id}
-              className="nl-card border-0 px-5"
+              className="nl-card px-5"
             >
               <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-[var(--text-prim)] hover:text-amber-400 hover:no-underline">
                 {faq.question}

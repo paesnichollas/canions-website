@@ -22,10 +22,13 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
       setIsScrolled(window.scrollY > 0);
 
-      // Detectar seção ativa
+      // Detectar seção ativa (leitura de layout uma vez por frame)
       const sections = navItems.map((item) => item.href.slice(1));
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -39,8 +42,15 @@ export default function Navigation() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleNavClick = (href: string) => {
