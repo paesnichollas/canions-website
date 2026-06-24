@@ -176,20 +176,16 @@ export default function Home() {
         ref={parceriaRef}
         className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-b from-[var(--bg-base)] via-[#202329] to-[var(--bg-base)]"
       >
-        {/* Glows decorativos */}
+        {/* Glows decorativos (estáticos — sem animação para não pesar no scroll) */}
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 -left-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl animate-glow" />
-          <div
-            className="absolute -bottom-28 -right-16 h-80 w-80 rounded-full bg-amber-500/10 blur-3xl animate-glow"
-            style={{ animationDelay: "2.5s" }}
-          />
-          <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-700/10 blur-3xl" />
+          <div className="absolute -top-24 -left-20 h-64 w-64 rounded-full bg-blue-500/15 blur-2xl" />
+          <div className="absolute -bottom-28 -right-16 h-72 w-72 rounded-full bg-amber-500/10 blur-2xl" />
         </div>
 
         <div className="container relative">
           {/* Cabeçalho */}
           <div className={cn("text-center", reveal())}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-sm font-semibold tracking-widest text-amber-300 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-sm font-semibold tracking-widest text-amber-300">
               <span className="h-2 w-2 rounded-full bg-amber-400 motion-safe:animate-pulse" />
               NOVA PARCERIA
             </span>
@@ -209,16 +205,16 @@ export default function Home() {
           {/* Card principal: logo + texto */}
           <div className={cn("mt-14", reveal("delay-150"))}>
             <div className="relative rounded-3xl bg-gradient-to-br from-blue-500/50 via-blue-300/10 to-amber-500/40 p-[1.5px] shadow-2xl">
-              <div className="rounded-[calc(1.5rem-1.5px)] bg-[#23262d]/90 p-6 backdrop-blur-xl md:p-10">
+              <div className="rounded-[calc(1.5rem-1.5px)] bg-[#23262d] p-6 md:p-10">
                 <div className="grid items-center gap-10 md:grid-cols-2">
                   {/* Logo */}
                   <div className="flex justify-center">
                     <div className="relative">
                       <div
                         aria-hidden
-                        className="absolute inset-0 -m-3 rounded-3xl bg-blue-500/30 blur-2xl animate-glow"
+                        className="absolute inset-0 -m-3 rounded-3xl bg-blue-500/20 blur-2xl"
                       />
-                      <div className="relative flex w-full max-w-xs items-center justify-center rounded-2xl bg-white p-8 shadow-xl animate-float">
+                      <div className="relative flex w-full max-w-xs items-center justify-center rounded-2xl bg-white p-8 shadow-xl">
                         <img
                           src="/img/newlife/Fundo de logo new life Removido.webp"
                           alt="NewLife"
@@ -312,10 +308,12 @@ export default function Home() {
                             <img
                               src={src}
                               alt={`Linha de suplementos NewLife — imagem ${i + 1}`}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                             />
                           </div>
-                          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                             Clique para ampliar
                           </span>
                         </button>
@@ -368,7 +366,7 @@ export default function Home() {
                 ].map((b) => (
                   <li
                     key={b.label}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-white/10"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors duration-300 hover:border-amber-400/40 hover:bg-white/10"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-md">
                       <svg
