@@ -40,32 +40,27 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
+  const units = [
+    { value: timeLeft.days, label: "Dias" },
+    { value: timeLeft.hours, label: "Horas" },
+    { value: timeLeft.minutes, label: "Minutos" },
+    { value: timeLeft.seconds, label: "Segundos" },
+  ];
+
   return (
-    <div className="flex justify-center gap-4 md:gap-8 py-8">
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold text-cta">
-          {String(timeLeft.days).padStart(2, "0")}
+    <div className="flex justify-center gap-3 md:gap-5 py-8">
+      {units.map((u) => (
+        <div key={u.label} className="text-center">
+          <div className="nl-card flex min-w-[64px] items-center justify-center px-3 py-3 md:min-w-[92px] md:px-6 md:py-4">
+            <span className="text-4xl md:text-5xl font-bold text-cta tabular-nums">
+              {String(u.value).padStart(2, "0")}
+            </span>
+          </div>
+          <div className="mt-2 text-xs md:text-sm uppercase tracking-wider text-[var(--text-sec)]">
+            {u.label}
+          </div>
         </div>
-        <div className="text-sm md:text-base text-white mt-2">Dias</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold text-cta">
-          {String(timeLeft.hours).padStart(2, "0")}
-        </div>
-        <div className="text-sm md:text-base text-white mt-2">Horas</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold text-cta">
-          {String(timeLeft.minutes).padStart(2, "0")}
-        </div>
-        <div className="text-sm md:text-base text-white mt-2">Minutos</div>
-      </div>
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold text-cta">
-          {String(timeLeft.seconds).padStart(2, "0")}
-        </div>
-        <div className="text-sm md:text-base text-white mt-2">Segundos</div>
-      </div>
+      ))}
     </div>
   );
 }

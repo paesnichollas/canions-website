@@ -23,6 +23,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import SectionHeader from "@/components/SectionHeader";
 
 type SponsorLogo = { src: string; alt: string; imgClassName?: string };
 
@@ -107,7 +108,13 @@ export default function Home() {
         <PhotoMarquee />
         <div className="relative text-white mt-8 md:mt-12 w-full max-w-full">
           <div className="container text-center w-full max-w-full px-4">
-            <h1 className="text-3xl sm:text-4xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-600 break-normal leading-tight">
+            <div className="mb-5 flex justify-center">
+              <span className="badge-pill">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Edição 2026 · Piranhas/AL
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-7xl mb-4 text-shadow-lg font-rubik-dirt text-amber-500 break-normal leading-tight">
               {EVENT_TITLE}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-sand-300">
@@ -390,14 +397,12 @@ export default function Home() {
       </section>
 
       {/* Sobre */}
-      <section id="sobre" className="py-16">
+      <section id="sobre" className="py-20">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Sobre a Prova
-          </h2>
+          <SectionHeader badge="A Prova" title="Sobre a Prova" />
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold text-blue-700 mb-4">
+              <h3 className="text-2xl font-bold heading-grad mb-4">
                 O Desafio
               </h3>
               <p className="text-[var(--text-sec)] mb-4">
@@ -413,20 +418,20 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-green-700 mb-4">
+              <h3 className="text-2xl font-bold heading-grad mb-4">
                 O Percurso
               </h3>
               <div className="space-y-4">
-                <div className="bg-[var(--bg-surface)] p-4 rounded-lg border border-[var(--border-subtle)]">
-                  <p className="font-bold text-blue-700">Largada</p>
+                <div className="nl-card p-4">
+                  <p className="font-bold text-blue-400">Largada</p>
                   <p className="text-[var(--text-sec)]">{START_LOCATION}</p>
                 </div>
-                <div className="bg-[var(--bg-surface)] p-4 rounded-lg border border-[var(--border-subtle)]">
-                  <p className="font-bold text-green-700">Chegada</p>
+                <div className="nl-card p-4">
+                  <p className="font-bold text-green-400">Chegada</p>
                   <p className="text-[var(--text-sec)]">{FINISH_LOCATION}</p>
                 </div>
-                <div className="bg-[var(--bg-surface)] p-4 rounded-lg border border-[var(--border-subtle)]">
-                  <p className="font-bold text-amber-600">Distância</p>
+                <div className="nl-card p-4">
+                  <p className="font-bold text-amber-500">Distância</p>
                   <p className="text-[var(--text-sec)]">106 quilômetros</p>
                 </div>
               </div>
@@ -436,85 +441,87 @@ export default function Home() {
       </section>
 
       {/* Percurso */}
-      <section id="percurso" className="py-16 bg-[var(--bg-surface)]">
+      <section id="percurso" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Percurso Detalhado
-          </h2>
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-            <h3 className="text-2xl font-bold text-green-700 mb-6">
+          <SectionHeader
+            badge="O Trajeto"
+            title="Percurso Detalhado"
+            subtitle="106 km divididos em 8 etapas pelos cânions do Rio São Francisco."
+          />
+          <div className="nl-card p-8">
+            <h3 className="text-2xl font-bold heading-grad mb-6">
               Etapas do Percurso
             </h3>
             <div className="space-y-4">
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   1
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Porto de Piranhas até a Prainha de Entremontes</h4>
+                  <h4 className="font-bold text-blue-400">Porto de Piranhas até a Prainha de Entremontes</h4>
                   <p className="text-[var(--text-sec)]">Largada até km 25</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   2
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Prainha de Entremontes até a Fazenda Boa-Vista</h4>
+                  <h4 className="font-bold text-blue-400">Prainha de Entremontes até a Fazenda Boa-Vista</h4>
                   <p className="text-[var(--text-sec)]">Km 25 até km 42</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   3
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Fazenda Boa-Vista até a AL-220</h4>
+                  <h4 className="font-bold text-blue-400">Fazenda Boa-Vista até a AL-220</h4>
                   <p className="text-[var(--text-sec)]">km 42 até km 58</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   4
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">AL-220 até os Cânions do Gavião</h4>
+                  <h4 className="font-bold text-blue-400">AL-220 até os Cânions do Gavião</h4>
                   <p className="text-[var(--text-sec)]">km 58 até km 66</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   5
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Cânions do Gavião até o acesso à Trilha da Ponte de Ferro</h4>
+                  <h4 className="font-bold text-blue-400">Cânions do Gavião até o acesso à Trilha da Ponte de Ferro</h4>
                   <p className="text-[var(--text-sec)]">km 66 até km 71</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   6
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Trilha da Ponte de Ferro até a estrada da Praia de Dulce</h4>
+                  <h4 className="font-bold text-blue-400">Trilha da Ponte de Ferro até a estrada da Praia de Dulce</h4>
                   <p className="text-[var(--text-sec)]">km 71 até km 83</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   7
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Praia de Dulce até AL-220 nas Castanhas</h4>
+                  <h4 className="font-bold text-blue-400">Praia de Dulce até AL-220 nas Castanhas</h4>
                   <p className="text-[var(--text-sec)]">km 83 até km 88</p>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   8
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">AL-220 nas Castanhas até a Praça do Giradouro</h4>
+                  <h4 className="font-bold text-blue-400">AL-220 nas Castanhas até a Praça do Giradouro</h4>
                   <p className="text-[var(--text-sec)]">km 88 até km 106</p>
                 </div>
               </div>
@@ -522,106 +529,106 @@ export default function Home() {
           </div>
 
           {/* Percurso 5 km */}
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] mt-8">
-            <h3 className="text-2xl font-bold text-green-700 mb-6">
+          <div className="nl-card p-8 mt-8">
+            <h3 className="text-2xl font-bold text-green-400 mb-6">
               Percurso 5 km
             </h3>
             <div className="space-y-4">
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   1
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Largada no Cais de Piranhas</h4>
+                  <h4 className="font-bold text-blue-400">Largada no Cais de Piranhas</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   2
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Sobe a Rota Encantada</h4>
+                  <h4 className="font-bold text-blue-400">Sobe a Rota Encantada</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   3
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Desce para Piranhas Velha</h4>
+                  <h4 className="font-bold text-blue-400">Desce para Piranhas Velha</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   4
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Chegada na Praça do Giradouro</h4>
+                  <h4 className="font-bold text-blue-400">Chegada na Praça do Giradouro</h4>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Percurso 10 km */}
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] mt-8">
-            <h3 className="text-2xl font-bold text-green-700 mb-6">
+          <div className="nl-card p-8 mt-8">
+            <h3 className="text-2xl font-bold text-green-400 mb-6">
               Percurso 10 km
             </h3>
             <div className="space-y-4">
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   1
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Largada no Cais de Piranhas</h4>
+                  <h4 className="font-bold text-blue-400">Largada no Cais de Piranhas</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   2
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Sobe a Rota Encantada</h4>
+                  <h4 className="font-bold text-blue-400">Sobe a Rota Encantada</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   3
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Vai até o MIX</h4>
+                  <h4 className="font-bold text-blue-400">Vai até o MIX</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   4
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Dobra à esquerda até a última rua da vila</h4>
+                  <h4 className="font-bold text-blue-400">Dobra à esquerda até a última rua da vila</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   5
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Entra na Leste-Oeste</h4>
+                  <h4 className="font-bold text-blue-400">Entra na Leste-Oeste</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   6
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Segue pela trilha do trem</h4>
+                  <h4 className="font-bold text-blue-400">Segue pela trilha do trem</h4>
                 </div>
               </div>
               <div className="flex gap-4 items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center font-bold text-ink">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink bg-gradient-to-br from-amber-400 to-amber-600 shadow-md">
                   7
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-700">Chegada na Praça do Giradouro</h4>
+                  <h4 className="font-bold text-blue-400">Chegada na Praça do Giradouro</h4>
                 </div>
               </div>
             </div>
@@ -636,15 +643,15 @@ export default function Home() {
       <CategoriesTabs />
 
       {/* Premiação por Faixa Etária
-      <section id="premiacao-faixa-etaria" className="py-16 bg-[var(--bg-surface)]">
+      <section id="premiacao-faixa-etaria" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-500 mb-12 text-center">
             Premiação por Faixa Etária
           </h2>
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
+          <div className="nl-card p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">
+                <h3 className="text-2xl font-bold text-blue-400 mb-4">
                   Troféus por Faixa Etária
                 </h3>
                 <p className="text-[var(--text-sec)] mb-6">
@@ -652,28 +659,28 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h4 className="text-lg font-bold text-green-700 mb-4">
+                <h4 className="text-lg font-bold text-green-400 mb-4">
                   Faixas Etárias
                 </h4>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-500 font-bold mt-1">•</span>
                     <span className="text-[var(--text-sec)]">19 a 29 anos</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-500 font-bold mt-1">•</span>
                     <span className="text-[var(--text-sec)]">30 a 39 anos</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-500 font-bold mt-1">•</span>
                     <span className="text-[var(--text-sec)]">40 a 49 anos</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-500 font-bold mt-1">•</span>
                     <span className="text-[var(--text-sec)]">50 a 59 anos</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-500 font-bold mt-1">•</span>
                     <span className="text-[var(--text-sec)]">60+ anos</span>
                   </li>
                 </ul>
@@ -687,11 +694,9 @@ export default function Home() {
       </section> */}
 
       {/* Kits */}
-      <section id="kits" className="py-16">
+      <section id="kits" className="py-20">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Kit do Atleta
-          </h2>
+          <SectionHeader badge="Incluso" title="Kit do Atleta" />
           <div className={`grid gap-6 ${
             ATHLETE_KITS.length === 1 
               ? 'grid-cols-1 max-w-md mx-auto' 
@@ -700,9 +705,9 @@ export default function Home() {
               : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
           }`}>
             {ATHLETE_KITS.map((kit) => (
-              <div 
+              <div
                 key={kit.id}
-                className={`bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg border-t-4 ${kit.borderColor}`}
+                className="nl-card nl-card-hover p-6"
               >
                 {kit.image && (
                   <div className="mb-4">
@@ -720,7 +725,10 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-[var(--text-prim)] mb-4">{kit.name}</h3>
                 <ul className="space-y-2 text-[var(--text-sec)]">
                   {kit.items.map((item, index) => (
-                    <li key={index}>✓ {item}</li>
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-amber-400">✓</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -730,24 +738,22 @@ export default function Home() {
       </section>
 
       {/* Cronograma */}
-      <section id="cronograma" className="py-16 bg-[var(--bg-surface)]">
+      <section id="cronograma" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Cronograma
-          </h2>
+          <SectionHeader badge="Programação" title="Cronograma" />
           <div className="space-y-4 max-w-2xl mx-auto">
-            <div className="bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-              <p className="font-bold text-blue-700 mb-2">Sexta-feira, 11 de Setembro</p>
+            <div className="nl-card p-6">
+              <p className="font-bold text-blue-400 mb-2">Sexta-feira, 11 de Setembro</p>
               <p className="text-[var(--text-sec)]">Credenciamento e retirada de kits (14h-18h) <br></br> <br></br> Congresso Técnico (18:30h-20h)</p>
               <br></br>
-              <p className="text-amber-600">Obs.: O congresso técnico poderá ser presencial ou virtual.</p>
+              <p className="text-amber-500">Obs.: O congresso técnico poderá ser presencial ou virtual.</p>
             </div>
-            <div className="bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-              <p className="font-bold text-green-700 mb-2">Sábado, 12 de Setembro</p>
+            <div className="nl-card p-6">
+              <p className="font-bold text-green-400 mb-2">Sábado, 12 de Setembro</p>
               <p className="text-[var(--text-sec)]">Largada: 05h00 <br></br> <br></br> Encerramento: 23h00</p>
             </div>
-            {/* <div className="bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-              <p className="font-bold text-amber-600 mb-2">Domingo, 13 de Setembro</p>
+            {/* <div className="nl-card p-6">
+              <p className="font-bold text-amber-500 mb-2">Domingo, 13 de Setembro</p>
               <p className="text-[var(--text-sec)]">Cerimônia de premiação (14h)</p>
             </div> */}
           </div>
@@ -755,26 +761,24 @@ export default function Home() {
       </section>
 
       {/* Chipagem */}
-      <section id="chipagem" className="py-16">
+      <section id="chipagem" className="py-20">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Chipagem Eletrônica
-          </h2>
+          <SectionHeader badge="Cronometragem" title="Chipagem Eletrônica" />
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-[var(--bg-surface)] p-6 rounded-lg border border-[var(--border-subtle)]">
-              <h3 className="text-lg font-bold text-blue-700 mb-2">Retirada</h3>
+            <div className="nl-card nl-card-hover p-6">
+              <h3 className="text-lg font-bold text-blue-400 mb-2">Retirada</h3>
               <p className="text-[var(--text-sec)]">
                 O chip é entregue no credenciamento junto com o kit do atleta.
               </p>
             </div>
-            <div className="bg-[var(--bg-surface)] p-6 rounded-lg border border-[var(--border-subtle)]">
-              <h3 className="text-lg font-bold text-green-700 mb-2">Uso</h3>
+            <div className="nl-card nl-card-hover p-6">
+              <h3 className="text-lg font-bold text-green-400 mb-2">Uso</h3>
               <p className="text-[var(--text-sec)]">
                 Use o chip na pulseira fornecida durante toda a prova.
               </p>
             </div>
-            <div className="bg-[var(--bg-surface)] p-6 rounded-lg border border-[var(--border-subtle)]">
-              <h3 className="text-lg font-bold text-amber-600 mb-2">Penalidades</h3>
+            <div className="nl-card nl-card-hover p-6">
+              <h3 className="text-lg font-bold text-amber-500 mb-2">Penalidades</h3>
               <p className="text-[var(--text-sec)]">
                 Perda ou dano ao chip resulta em multa de R$ 500,00.
               </p>
@@ -786,7 +790,7 @@ export default function Home() {
             </p>
             <Button
               variant="outline"
-              className="border-blue-400 text-blue-400 hover:bg-blue-50"
+              className="border-blue-400/50 text-blue-300 hover:bg-blue-500/10"
               disabled
             >
               Resultados Oficiais (Em breve)
@@ -799,20 +803,18 @@ export default function Home() {
       <Documentation />
 
       {/* Regulamento */}
-      <section id="regulamento" className="py-16">
+      <section id="regulamento" className="py-20">
         <div className="container">
-          <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-12 text-center">
-            Regulamento
-          </h2>
+          <SectionHeader badge="Documentos" title="Regulamento" />
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
             {/* Card Regulamento */}
-            <div className="bg-[var(--bg-surface)] p-4 sm:p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)] w-full max-w-full">
+            <div className="nl-card p-4 sm:p-6 text-center w-full max-w-full">
               <p className="text-[var(--text-sec)] mb-6 text-sm sm:text-base break-words">
                 Leia o regulamento completo da prova para conhecer todas as regras
                 e procedimentos.
               </p>
               <Button
-                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 text-ink hover:from-amber-400 hover:to-amber-500 font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/docs/regulamento-canions-2026.pdf";
@@ -825,16 +827,16 @@ export default function Home() {
             </div>
 
             {/* Card Detalhamento do Percurso */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-amber-500 mb-8 text-center">
              RaceBook
             </h2>
-            <div className="bg-[var(--bg-surface)] p-4 sm:p-6 rounded-md shadow-lg text-center border border-[var(--border-subtle)] w-full max-w-full">
+            <div className="nl-card p-4 sm:p-6 text-center w-full max-w-full">
               <p className="text-[var(--text-sec)] mb-6 text-sm sm:text-base break-words">
                 Confira o detalhamento do percurso com trechos e orientações
-                específicas para os atletas <span className="text-amber-600">Extremamente recomendado a impressão desse documento</span>.
+                específicas para os atletas <span className="text-amber-500">Extremamente recomendado a impressão desse documento</span>.
               </p>
               <Button
-                className="bg-earth-700 hover:bg-earth-900 text-white font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 text-ink hover:from-amber-400 hover:to-amber-500 font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/docs/percuso-detalhamento.pdf";
@@ -859,12 +861,12 @@ export default function Home() {
       <Hospedagem />
 
       {/* Gelo para Atletas */}
-      {/* <section id="gelo-atletas" className="py-16">
+      {/* <section id="gelo-atletas" className="py-20">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-amber-500 mb-12 text-center">
             Gelo para Atletas
           </h2>
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)] max-w-4xl mx-auto">
+          <div className="nl-card p-8 max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="flex justify-center"> */}
                 {/* TODO: Substituir por logo da fábrica de gelo quando disponível */}
@@ -889,18 +891,16 @@ export default function Home() {
       </section> */}
 
       {/* Patrocínios */}
-      <section id="patrocinio" className="py-16 bg-[var(--bg-surface)]">
+      <section id="patrocinio" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container">
-          <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-            Patrocinadores e Apoios
-          </h2>
+          <SectionHeader badge="Quem Apoia" title="Patrocinadores e Apoios" />
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-8 items-stretch justify-items-stretch">
             {SPONSOR_LOGOS.map((s) => (
               <button
                 key={s.src}
                 type="button"
                 onClick={() => setSelectedLogo(s)}
-                className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 hover:ring-2 hover:ring-amber-500/50 transition-all duration-300 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="w-full aspect-[4/3] flex items-center justify-center bg-white/10 rounded-xl p-6 border border-white/20 hover:bg-white/20 hover:ring-2 hover:ring-amber-400/60 transition-all duration-300 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
                 aria-label={`Ver logo maior: ${s.alt}`}
               >
                 <img

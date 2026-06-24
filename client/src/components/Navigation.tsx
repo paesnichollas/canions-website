@@ -64,8 +64,8 @@ export default function Navigation() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 w-full max-w-full ${
         isScrolled
-          ? "bg-[var(--bg-surface)] shadow-lg"
-          : "bg-[var(--bg-surface)] backdrop-blur-sm shadow-sm"
+          ? "bg-[#23262d] shadow-lg border-b border-white/10"
+          : "bg-[#23262d] border-b border-transparent"
       }`}
     >
       <nav className="container py-4 flex items-center justify-between w-full max-w-full">

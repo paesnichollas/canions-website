@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { CATEGORIES } from "@shared/const";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import SectionHeader from "@/components/SectionHeader";
 
 const categoryDescriptions: Record<string, string> = {
   Solo: "Corrida individual - Desafio máximo para atletas experientes",
@@ -120,11 +121,12 @@ export default function CategoriesTabs() {
   }, [activeCategory]);
 
   return (
-    <section id="categorias" className="py-16 bg-[var(--bg-surface)]">
+    <section
+      id="categorias"
+      className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]"
+    >
       <div className="container">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          Categorias
-        </h2>
+        <SectionHeader badge="Modalidades" title="Categorias" />
 
         {/* <div className="mb-4">
           <p className="text-sm text-[var(--text-sec)] text-center">
@@ -165,8 +167,8 @@ export default function CategoriesTabs() {
 
           {CATEGORIES.map((category) => (
             <TabsContent key={category} value={category} className="space-y-6">
-              <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
-                <h3 className="text-2xl font-bold text-amber-600 mb-4">
+              <div className="nl-card p-8">
+                <h3 className="text-2xl font-bold text-amber-500 mb-4">
                   {category}
                 </h3>
                 <p className="text-[var(--text-sec)] mb-6">
@@ -175,7 +177,7 @@ export default function CategoriesTabs() {
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-lg font-bold text-blue-700 mb-4">
+                    <h4 className="text-lg font-bold text-blue-400 mb-4">
                       Recomendações
                     </h4>
                     <ul className="space-y-2">
@@ -189,7 +191,7 @@ export default function CategoriesTabs() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-bold text-green-700 mb-4">
+                    <h4 className="text-lg font-bold text-green-400 mb-4">
                       Benefícios
                     </h4>
                     <ul className="space-y-2">

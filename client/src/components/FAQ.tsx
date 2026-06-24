@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionHeader from "@/components/SectionHeader";
 
 const faqs = [
   {
@@ -58,19 +59,21 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-16">
-      <div className="container max-w-2xl">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          Perguntas Frequentes
-        </h2>
+    <section id="faq" className="py-20">
+      <div className="container max-w-3xl">
+        <SectionHeader badge="Dúvidas" title="Perguntas Frequentes" />
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-3">
           {faqs.map((faq) => (
-            <AccordionItem key={faq.id} value={faq.id}>
-              <AccordionTrigger className="text-lg font-bold text-amber-600 hover:text-blue-700">
+            <AccordionItem
+              key={faq.id}
+              value={faq.id}
+              className="nl-card border-0 px-5"
+            >
+              <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-[var(--text-prim)] hover:text-amber-400 hover:no-underline">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-white">
+              <AccordionContent className="text-[var(--text-sec)]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

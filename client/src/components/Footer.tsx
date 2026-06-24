@@ -7,12 +7,15 @@ import {
 
 export default function Footer() {
   return (
-    <footer id="contato" className="bg-earth-900 text-white py-16">
+    <footer
+      id="contato"
+      className="bg-gradient-to-b from-[#202329] to-[#15171b] text-white py-16 border-t border-white/10"
+    >
       <div className="container">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Sobre */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Sobre o Evento</h3>
+            <h3 className="text-lg font-bold text-amber-500 mb-4 uppercase tracking-wide">Sobre o Evento</h3>
             <p className="text-gray-300">
               {EVENT_TITLE} é uma ultramaratona desafiadora nos cânions do São
               Francisco, em Piranhas, Alagoas.
@@ -21,7 +24,7 @@ export default function Footer() {
 
           {/* Links Úteis */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Links Úteis</h3>
+            <h3 className="text-lg font-bold text-amber-500 mb-4 uppercase tracking-wide">Links Úteis</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <a href="#sobre" className="hover:text-cta transition-colors">
@@ -48,7 +51,7 @@ export default function Footer() {
 
           {/* Contato */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contato</h3>
+            <h3 className="text-lg font-bold text-amber-500 mb-4 uppercase tracking-wide">Contato</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <a

@@ -10,6 +10,7 @@ import {
   LINK_TERMO_10KM,
   LINK_FICHA_MEDICA,
 } from "@shared/const";
+import SectionHeader from "@/components/SectionHeader";
 
 const documents = [
   // {
@@ -25,7 +26,7 @@ const documents = [
     link: LINK_TERMO_SOLO,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
   {
     name: "Termo de Responsabilidade (Dupla)",
@@ -33,7 +34,7 @@ const documents = [
     link: LINK_TERMO_DUPLA,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
   {
     name: "Termo de Responsabilidade (Quarteto)",
@@ -41,7 +42,7 @@ const documents = [
     link: LINK_TERMO_QUARTETO,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
   {
     name: "Termo de Responsabilidade (Sexteto)",
@@ -49,7 +50,7 @@ const documents = [
     link: LINK_TERMO_SEXTETO,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
   {
     name: "Termo de Responsabilidade (5km)",
@@ -57,7 +58,7 @@ const documents = [
     link: LINK_TERMO_5KM,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
   {
     name: "Termo de Responsabilidade (10km)",
@@ -65,7 +66,7 @@ const documents = [
     link: LINK_TERMO_10KM,
     icon: "📋",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
 
   {
@@ -74,17 +75,18 @@ const documents = [
     link: LINK_FICHA_MEDICA,
     icon: "🩺",
     size: "PDF",
-    titleClass: "text-amber-600",
+    titleClass: "text-amber-500",
   },
 ];
 
 export default function Documentation() {
   return (
-    <section id="documentacao" className="py-16 bg-[var(--bg-surface)]">
+    <section
+      id="documentacao"
+      className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]"
+    >
       <div className="container">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          Documentação
-        </h2>
+        <SectionHeader badge="Arquivos" title="Documentação" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {documents.map((doc) => (
@@ -92,14 +94,14 @@ export default function Documentation() {
               key={doc.name}
               href={doc.link}
               download
-              className="bg-[var(--bg-surface)] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-[var(--border-subtle)]"
+              className="nl-card nl-card-hover p-6"
             >
               <div className="text-4xl mb-4">{doc.icon}</div>
               <h3 className={`text-lg font-bold ${doc.titleClass ?? "text-[var(--text-prim)]"} mb-2`}>{doc.name}</h3>
               <p className="text-sm text-[var(--text-sec)] mb-4">{doc.description}</p>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-[var(--text-sec)]">{doc.size}</span>
-                <button className="text-cta font-bold hover:text-amber-600 transition-colors">
+                <button className="text-cta font-bold hover:text-amber-500 transition-colors">
                   ↓ Download
                 </button>
               </div>

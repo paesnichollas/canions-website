@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import SectionHeader from "@/components/SectionHeader";
 
 type Photo = { id: number; src: string; alt: string };
 
@@ -43,7 +44,7 @@ function Gallery({ title, photos }: { title: string; photos: Photo[] }) {
   };
 
   return (
-    <div className="bg-[var(--bg-surface)] p-4 rounded-lg shadow-lg border border-[var(--border-subtle)]">
+    <div className="nl-card p-4 w-full max-w-xs">
       <h3 className="sr-only">{title}</h3>
 
       {/* Capa principal (quadrada) */}
@@ -126,15 +127,15 @@ function Gallery({ title, photos }: { title: string; photos: Photo[] }) {
 
 export default function Hospedagem() {
   return (
-    <section id="hospedagem" className="py-16">
+    <section id="hospedagem" className="py-20">
       <div className="container">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">Hospedagem</h2>
+        <SectionHeader badge="Onde Ficar" title="Hospedagem" />
         {/* <p className="text-center text-[var(--text-sec)] max-w-3xl mx-auto mb-10">
           Seleção de imagens de três pousadas parceiras em Piranhas. Para reservas, entre em contato diretamente com as pousadas.
         </p> */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <p className="text-base text-green-600">
-            <span className="font-semibold">Central de Reservas:</span> (82) 98833-5702
+            <span className="font-semibold text-green-400">Central de Reservas:</span> (82) 98833-5702
           </p>
           <p className="text-base text-white/70 mt-1">
             <span className="font-semibold">Obs.:</span> Ressaltamos que esses valores são praticados nos meses de novembro e dezembro de 2025, podendo sofrer alterações a partir de janeiro de 2026.

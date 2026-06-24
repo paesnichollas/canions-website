@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import SectionHeader from "@/components/SectionHeader";
 
 // Dados de exemplo - em produção, estes viriam de uma API ou arquivos JSON
 const resultadosData = {
@@ -76,11 +77,15 @@ export default function Resultados() {
     };
 
   return (
-    <section id="resultados" className="py-16 bg-[var(--bg-surface)]">
+    <section
+      id="resultados"
+      className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]"
+    >
       <div className="container">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          Resultados de Provas Anteriores
-        </h2>
+        <SectionHeader
+          badge="Histórico"
+          title="Resultados de Provas Anteriores"
+        />
 
         {/* Tabs por ano */}
         <div 
@@ -115,14 +120,14 @@ export default function Resultados() {
 
         {/* Conteúdo do ano selecionado */}
         <div className="space-y-6">
-          <div className="bg-[var(--bg-surface)] p-8 rounded-lg shadow-lg border border-[var(--border-subtle)]">
+          <div className="nl-card p-8">
             <h3 className="text-2xl font-bold text-[var(--text-prim)] mb-6">
               Resultados {dadosAnoAtual.ano} - {dadosAnoAtual.distancia} km
             </h3>
 
             {/* Links de resultados */}
             <div className="mb-8">
-              <h4 className="text-lg font-bold text-blue-700 mb-4">
+              <h4 className="text-lg font-bold text-blue-400 mb-4">
                 Links de Resultados
               </h4>
               <div className="flex flex-wrap gap-4">
@@ -130,7 +135,7 @@ export default function Resultados() {
                   <Button
                     key={idx}
                     variant="outline"
-                    className="border-blue-700 text-blue-700 hover:bg-blue-50"
+                    className="border-blue-400/50 text-blue-300 hover:bg-blue-500/10"
                     onClick={() => {
                       if (link.href.startsWith('http')) {
                         window.open(link.href, '_blank');

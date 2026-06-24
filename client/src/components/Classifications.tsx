@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CATEGORIES } from "@shared/const";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import SectionHeader from "@/components/SectionHeader";
 
 interface Athlete {
   pos: number;
@@ -42,7 +43,7 @@ export default function Classifications() {
 
   if (loading) {
     return (
-      <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
+      <section id="classificacoes" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container text-center">
           <p className="text-[#D1D5DB]">Carregando classificações...</p>
         </div>
@@ -52,9 +53,9 @@ export default function Classifications() {
 
   if (years.length === 0) {
     return (
-      <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
+      <section id="classificacoes" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
         <div className="container text-center">
-          <p className="text-amber-600">Classificações em breve</p>
+          <p className="text-amber-500">Classificações em breve</p>
         </div>
       </section>
     );
@@ -63,11 +64,9 @@ export default function Classifications() {
   const currentData = selectedYear ? data[selectedYear] : null;
 
   return (
-    <section id="classificacoes" className="py-16 bg-[#2E2E2E]">
+    <section id="classificacoes" className="py-20 bg-gradient-to-b from-[var(--bg-base)] via-[#22252b] to-[var(--bg-base)]">
       <div className="container">
-        <h2 className="text-4xl font-bold text-amber-600 mb-12 text-center">
-          CLASSIFICAÇÃO CÂNIONS 2026
-        </h2>
+        <SectionHeader badge="Ranking" title="Classificação Cânions 2026" />
         {/* Abas por Ano */}
         <Tabs
           value={selectedYear?.toString() || ""}
@@ -123,7 +122,7 @@ export default function Classifications() {
                                   key={athlete.pos}
                                   className="border-b border-[#505050] hover:bg-[#444444] transition-colors"
                                 >
-                                  <td className="px-6 py-4 font-bold text-amber-600">
+                                  <td className="px-6 py-4 font-bold text-amber-500">
                                     {athlete.pos}º
                                   </td>
                                   <td className="px-6 py-4 text-[#F3F4F6]">
