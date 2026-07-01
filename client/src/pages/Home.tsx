@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_OPEN_DATE } from "@shared/const";
 import Navigation from "@/components/Navigation";
+import BannerAnuncio from "@/components/BannerAnuncio";
 import PhotoMarquee from "@/components/PhotoMarquee";
 import Countdown from "@/components/Countdown";
 import CategoriesTabs from "@/components/CategoriesTabs";
@@ -101,6 +102,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] w-full max-w-full overflow-x-hidden">
+      <BannerAnuncio />
       <Navigation />
 
       {/* Hero Section */}
