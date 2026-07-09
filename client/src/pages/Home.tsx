@@ -47,6 +47,7 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/LOGO CALCONT 5.webp", alt: "Calcont Assessoria e Contabilidade" },
   { src: "/img/apoio/LOGO PRECINHO 2.webp", alt: "Mercadinho O Precinho" },
   { src: "/img/apoio/copra.webp", alt: "COPRA" },
+  { src: "/img/apoio/LOGO-BRAULIO.png", alt: "Vereador Bráulio Campos" },
 ];
 
 // Imagens de produtos NewLife para o carrossel (produtos2 é duplicata de produtos)
