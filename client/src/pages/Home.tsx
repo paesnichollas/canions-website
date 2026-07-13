@@ -48,6 +48,7 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/LOGO PRECINHO 2.webp", alt: "Mercadinho O Precinho" },
   { src: "/img/apoio/copra.webp", alt: "COPRA" },
   { src: "/img/apoio/LOGO-BRAULIO.png", alt: "Vereador Bráulio Campos" },
+  { src: "/img/apoio/seguradora.webp", alt: "Resgate Prevenções" },
 ];
 
 // Imagens de produtos NewLife para o carrossel (produtos2 é duplicata de produtos)
@@ -753,7 +754,7 @@ export default function Home() {
             </div>
             <div className="nl-card p-6">
               <p className="font-bold text-green-400 mb-2">Sábado, 12 de Setembro</p>
-              <p className="text-[var(--text-sec)]">Largada: 05h00 <br></br> <br></br> Encerramento: 23h00</p>
+              <p className="text-[var(--text-sec)]">Largada: 05h00 <br></br> <br></br> Encerramento: 00h00</p>
             </div>
             {/* <div className="nl-card p-6">
               <p className="font-bold text-amber-500 mb-2">Domingo, 13 de Setembro</p>
