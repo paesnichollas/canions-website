@@ -30,6 +30,11 @@ type SponsorLogo = { src: string; alt: string; imgClassName?: string };
 const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/logo-pref-piranhas.webp", alt: "Piranhas Mídia" },
   { src: "/img/apoio/SECULT STICKER (3) (1)-1.webp", alt: "SECULT - Secretaria Municipal de Cultura e Turismo" },
+  {
+    src: "/img/apoio/sejel-logo.png",
+    alt: "SEJEL - Secretaria Municipal da Juventude, Esporte e Lazer",
+    imgClassName: "max-h-36 sm:max-h-40 md:max-h-44",
+  },
   { src: "/img/apoio/logo-2025-pm-odc.webp", alt: "Prefeitura de Olho D'Água do Casado" },
   { src: "/img/apoio/logo mece.webp", alt: "Mecejana" },
   {
