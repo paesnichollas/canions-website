@@ -48,10 +48,10 @@ export default function BannerAnuncio() {
           type="button"
           onClick={handleClick}
           disabled={!REGISTRATION_ENABLED}
-          aria-label="Inscrições abertas até 15 de julho — clique para se inscrever"
+          aria-label={REGISTRATION_ENABLED ? "Inscrições abertas até 15 de julho — clique para se inscrever" : "Inscrições encerradas!"}
           className={[
             "group relative focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/60 rounded-2xl",
-            REGISTRATION_ENABLED ? "cursor-pointer" : "cursor-default",
+            REGISTRATION_ENABLED ? "cursor-pointer" : "cursor-default opacity-60",
           ].join(" ")}
         >
           {/* Halo pulsante ao redor da imagem */}
@@ -83,8 +83,14 @@ export default function BannerAnuncio() {
 
         {/* Urgência textual abaixo */}
         <p className="text-center text-xs sm:text-sm text-orange-200/70 tracking-wide">
-          Prazo encerra em{" "}
-          <span className="font-bold text-orange-300">15 de Julho</span> · Sem prorrogação
+          {REGISTRATION_ENABLED ? (
+            <>
+              Prazo encerra em{" "}
+              <span className="font-bold text-orange-300">15 de Julho</span> · Sem prorrogação
+            </>
+          ) : (
+            <span className="font-bold text-orange-300">Inscrições encerradas!</span>
+          )}
         </p>
       </div>
 

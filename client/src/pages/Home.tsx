@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_OPEN_DATE } from "@shared/const";
+import { LINK_INSCRICAO, EVENT_TITLE, EVENT_SUBTITLE, EVENT_LOCATION, START_LOCATION, FINISH_LOCATION, ATHLETE_KITS, REGISTRATION_ENABLED, REGISTRATION_CLOSED_LABEL } from "@shared/const";
 import Navigation from "@/components/Navigation";
 import BannerAnuncio from "@/components/BannerAnuncio";
 import PhotoMarquee from "@/components/PhotoMarquee";
@@ -137,9 +137,9 @@ export default function Home() {
                   }
                 }}
                 aria-disabled={!REGISTRATION_ENABLED}
-                title={REGISTRATION_ENABLED ? "Inscreva-se" : `Inscrições em ${REGISTRATION_OPEN_DATE}`}
+                title={REGISTRATION_ENABLED ? "Inscreva-se" : REGISTRATION_CLOSED_LABEL}
               >
-                {REGISTRATION_ENABLED ? "Inscrições Abertas!" : `Inscrições em ${REGISTRATION_OPEN_DATE}`}
+                {REGISTRATION_ENABLED ? "Inscrições Abertas!" : REGISTRATION_CLOSED_LABEL}
               </Button>
               <Button
                 size="lg"
