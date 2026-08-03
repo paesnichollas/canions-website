@@ -833,25 +833,25 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Card Detalhamento do Percurso */}
+            {/* Card Race Book */}
             <h2 className="text-3xl sm:text-4xl font-bold text-amber-500 mb-8 text-center">
-             RaceBook
+             Race Book
             </h2>
             <div className="nl-card p-4 sm:p-6 text-center w-full max-w-full">
               <p className="text-[var(--text-sec)] mb-6 text-sm sm:text-base break-words">
-                Confira o detalhamento do percurso com trechos e orientações
-                específicas para os atletas <span className="text-amber-500">Extremamente recomendado a impressão desse documento</span>.
+                Confira o Race Book com o detalhamento do percurso, trechos e orientações
+                específicas para os atletas. <span className="text-amber-500">Extremamente recomendada a impressão deste documento</span>.
               </p>
               <Button
                 className="bg-gradient-to-r from-amber-500 to-amber-600 text-ink hover:from-amber-400 hover:to-amber-500 font-bold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base w-full sm:w-auto break-words"
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "/docs/percuso-detalhamento.pdf";
-                  link.download = "percuso-detalhamento.pdf";
+                  link.href = "/docs/RACE_BOOK.pdf";
+                  link.download = "RACE_BOOK.pdf";
                   link.click();
                 }}
               >
-                Baixar Detalhamento do Percurso (PDF)
+                Baixar Race Book (PDF)
               </Button>
             </div>
           </div>
