@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
@@ -24,6 +24,9 @@ export default function EventPhotoCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isPhotoPickerOpen, setIsPhotoPickerOpen] = useState(false);
+  const [photoNumber, setPhotoNumber] = useState("1");
+  const autoAdvanceToken = useRef(0);
 
   useEffect(() => {
     if (!api) return;
@@ -40,14 +43,23 @@ export default function EventPhotoCarousel() {
   }, [api]);
 
   useEffect(() => {
-    if (!api || isPaused || selectedIndex !== null) return;
+    autoAdvanceToken.current += 1;
+
+    if (!api || isPaused || selectedIndex !== null || isPhotoPickerOpen) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reducedMotion.matches) return;
 
-    const timeout = window.setTimeout(() => api.scrollNext(), 5500);
-    return () => window.clearTimeout(timeout);
-  }, [api, activeIndex, isPaused, selectedIndex]);
+    const token = autoAdvanceToken.current;
+    const timeout = window.setTimeout(() => {
+      if (autoAdvanceToken.current === token) api.scrollNext();
+    }, 3000);
+
+    return () => {
+      autoAdvanceToken.current += 1;
+      window.clearTimeout(timeout);
+    };
+  }, [api, activeIndex, isPaused, selectedIndex, isPhotoPickerOpen]);
 
   const visibleDots = Math.min(DOT_COUNT, PHOTOS.length);
   const firstDot = Math.min(
@@ -58,6 +70,23 @@ export default function EventPhotoCarousel() {
   const selectPhoto = (index: number) => {
     setSelectedIndex(index);
     api?.scrollTo(index);
+  };
+
+  const openPhotoPicker = () => {
+    setPhotoNumber(String(activeIndex + 1));
+    setIsPhotoPickerOpen(true);
+  };
+
+  const submitPhotoNumber = () => {
+    const index = Number(photoNumber) - 1;
+
+    if (Number.isInteger(index) && index >= 0 && index < PHOTOS.length) {
+      api?.scrollTo(index);
+    } else {
+      setPhotoNumber(String(activeIndex + 1));
+    }
+
+    setIsPhotoPickerOpen(false);
   };
 
   const showPreviousPhoto = () => {
@@ -160,9 +189,40 @@ export default function EventPhotoCarousel() {
         </Carousel>
 
         <div className="mx-auto mt-7 flex max-w-5xl items-center justify-between gap-5 px-1">
-          <p className="shrink-0 text-sm font-semibold text-amber-200" aria-live="polite">
-            {activeIndex + 1} de {PHOTOS.length}
-          </p>
+          <div className="flex shrink-0 items-center gap-2 text-sm font-semibold text-amber-200" aria-live="polite">
+            {isPhotoPickerOpen ? (
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                value={photoNumber}
+                onChange={(event) => setPhotoNumber(event.target.value.replace(/[^0-9]/g, ""))}
+                onBlur={submitPhotoNumber}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    event.currentTarget.blur();
+                  }
+                  if (event.key === "Escape") {
+                    setPhotoNumber(String(activeIndex + 1));
+                    setIsPhotoPickerOpen(false);
+                  }
+                }}
+                aria-label={`Escolher foto de 1 a ${PHOTOS.length}`}
+                autoFocus
+                className="h-11 w-12 rounded-lg border border-amber-300 bg-[#161916] text-center text-base font-bold text-amber-200 outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={openPhotoPicker}
+                className="flex h-11 min-w-12 items-center justify-center rounded-lg border border-amber-300/80 bg-[#161916] px-2 text-base font-bold text-amber-200 transition-colors hover:bg-amber-300/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+                aria-label={`Escolher foto atual ${activeIndex + 1} de ${PHOTOS.length}`}
+              >
+                {activeIndex + 1}
+              </button>
+            )}
+            <span>de {PHOTOS.length}</span>
+          </div>
           <div className="flex items-center gap-2" aria-label="Navegação por fotos">
             {Array.from({ length: visibleDots }, (_, offset) => firstDot + offset).map(
               (index) => (
