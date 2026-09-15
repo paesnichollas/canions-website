@@ -3,6 +3,7 @@ import { APP_LOGO, APP_TITLE } from "@shared/const";
 
 const navItems = [
   { label: "Inscrição", href: "#inscricao" },
+  { label: "Fotos", href: "#fotos-da-prova" },
   { label: "Parceria", href: "#parceria" },
   { label: "Sobre", href: "#sobre" },
   { label: "Percurso", href: "#percurso" },
@@ -157,4 +158,3 @@ export default function Navigation() {
     </header>
   );
 }
-

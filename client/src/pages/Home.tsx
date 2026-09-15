@@ -7,6 +7,7 @@ import PhotoMarquee from "@/components/PhotoMarquee";
 import Countdown from "@/components/Countdown";
 import CategoriesTabs from "@/components/CategoriesTabs";
 import PhotoGallery from "@/components/PhotoGallery";
+import EventPhotoCarousel from "@/components/EventPhotoCarousel";
 import Documentation from "@/components/Documentation";
 import Classifications from "@/components/Classifications";
 import Resultados from "@/components/Resultados";
@@ -173,6 +174,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <EventPhotoCarousel />
 
       {/* Countdown */}
       <section className="bg-[var(--bg-surface)] py-12 border-b border-[var(--border-subtle)]">
@@ -955,4 +958,3 @@ export default function Home() {
     </div>
   );
 }
-
