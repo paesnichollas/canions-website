@@ -54,6 +54,11 @@ const SPONSOR_LOGOS: SponsorLogo[] = [
   { src: "/img/apoio/copra.webp", alt: "COPRA" },
   { src: "/img/apoio/LOGO-BRAULIO.png", alt: "Vereador Bráulio Campos" },
   { src: "/img/apoio/seguradora.webp", alt: "Resgate Prevenções" },
+  {
+    src: "/img/apoio/laromana.png",
+    alt: "Laromana Ótica",
+    imgClassName: "invert",
+  },
 ];
 
 // Imagens de produtos NewLife para o carrossel (produtos2 é duplicata de produtos)
